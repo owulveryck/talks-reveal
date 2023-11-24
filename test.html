@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 50px solid #ecedf3;
+            position: relative;
+            padding-bottom: 60px; /* Adjust this to ensure text is not hidden by the border */
+            background-color: #ffffff; /* Background color of the body */
+            /* Other styling as needed */
+        }
+
+        .border-text {
+            position: absolute;
+            bottom: 50px; /* Position the text inside the bottom border */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Additional styling for the text */
+            font-size: 20px;
+            color: #333333;
+        }
+
+        /* Other styles can be added here */
+    </style>
+</head>
+<body>
+
+    <!-- Your content here -->
+    <div>Your main content goes here...</div>
+
+    <!-- Text at the bottom inside the border -->
+    <div class="border-text">This is the text at the bottom of the border.</div>
+
+</body>
+</html>
