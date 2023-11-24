@@ -79,6 +79,50 @@ body {
 
 
 
+.row {
+	display: flex;
+}
+
+.column {
+	/* flex: 50%; */
+	flex: 1;
+	padding: 10px; /* Optional for spacing */
+}
+
+.column img {
+	width: 100%; /* Make the image responsive */
+	height: auto;
+}
+.square {
+	position: relative;
+	width: 100%;
+}
+
+.square:before {
+	content: '';
+	display: block;
+	padding-top: 100%; /* Initial ratio of 1:1*/
+}
+
+.square img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vh;
+	height: 100vh;
+	object-fit: cover; /* This will cover the whole area */
+}
+.split-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.split-left, .split-right {
+  width: 45%; /* Adjust the width as needed */
+  padding: 10px; /* Optional, for some spacing */
+}
+
+
 
 // Override theme settings (see ../template/settings.scss)
 $backgroundColor: #fff;
