@@ -1,0 +1,189 @@
+		<svg width="100%" height="100%" viewBox="0 0 1300 900" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+					<defs>
+					<linearGradient id="wardleyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+					<stop offset="0%" stop-color="rgb(236,237,243)"></stop>
+					<stop offset="30%" stop-color="rgb(255,255,255)"></stop>
+					<stop offset="70%" stop-color="rgb(255,255,255)"></stop>
+					<stop offset="100%" stop-color="rgb(236,237,243)"></stop>
+					</linearGradient>
+					<marker id="arrow" refX="15" refY="0" markerWidth="12" markerHeight="12" viewBox="0 -5 10 10">
+					<path d="M0,-5L10,0L0,5" fill="rgb(255,0,0)"></path>
+					</marker>
+					<marker id="graphArrow" refX="9" refY="0" markerWidth="12" markerHeight="12" viewBox="0 -5 10 10">
+					<path d="M0,-5L10,0L0,5" fill="rgb(0,0,0)"></path>
+					</marker>
+					</defs>
+					<rect x="30" y="50" width="1240" height="800" style="fill:url(#wardleyGradient)"></rect>
+					<g transform=" translate(30,850) rotate(270)">
+					<line x1="0" y1="0" x2="800" y2="0" stroke-width="1" marker-end="url(#graphArrow)" stroke="rgb(19,36,84)" stroke-opacity="1.0"></line>
+					<line x1="0" y1="215" x2="800" y2="215" stroke-width="1" stroke-dasharray="2 2" stroke="rgb(19,36,84)" stroke-opacity="1.0"></line>
+					<line x1="0" y1="496" x2="800" y2="496" stroke-width="1" stroke-dasharray="2 2" stroke="rgb(19,36,84)" stroke-opacity="1.0"></line>
+					<line x1="0" y1="868" x2="800" y2="868" stroke-width="1" stroke-dasharray="2 2" stroke="rgb(19,36,84)" stroke-opacity="1.0"></line>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" text-anchor="start">
+					<tspan x="5" dy="-10">Invisible</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" text-anchor="end">
+					<tspan x="795" dy="-10">Visible</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" text-anchor="middle">
+					<tspan x="400" dy="-10">Value Chain</tspan>
+					</text>
+					</g>
+					<line x1="30" y1="850" x2="1270" y2="850" marker-end="url(#graphArrow)" stroke="rgb(19,36,84)" stroke-opacity="1.0"></line>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="37" dy="65">Uncharted</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="end">
+					<tspan x="1265" dy="65">Industrialised</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif">
+					<tspan x="30" dy="865">🧪 Genesis</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif">
+					<tspan x="245" dy="865">⚒️  Custom-Built</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif">
+					<tspan x="526" dy="865">🛒 Product
+					(+rental)</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif">
+					<tspan x="898" dy="865">⛽ Commodity
+					(+utility)</tspan>
+					</text>
+					<text fill="rgb(19,36,84)" fill-opacity="1.0" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" text-anchor="end">
+					<tspan x="1270" dy="865">Evolution</tspan>
+					</text>
+					<g class="" transform=" translate(37,285)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Marché: Indéfini</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(263,285)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Marché: En formation</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(543,285)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Marché: En croissance</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(915,285)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Marché: Mature</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(37,385)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Échec: Élevé / toléré</tspan>
+					<tspan x="0" dy="18">/ assumé</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(263,385)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Échec: Modéré / pas surprenant</tspan>
+					<tspan x="0" dy="18">mais néanmoins décevant</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(543,385)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Échec: non toléré, focus sur l'amélioration</tspan>
+					<tspan x="0" dy="18">continue</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(915,385)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Échec: Surpris par l'échec focus</tspan>
+					<tspan x="0" dy="18">sur l'efficacité opérationnelle</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(37,485)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Haute valeure future</tspan>
+					<tspan x="0" dy="18">investissement nécessaire</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(263,485)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Recheche de profits (ROI)</tspan>
+					<tspan x="0" dy="18">Confirmation de valeur</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(543,485)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Recherhe du profit</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(915,485)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Volume élevé / reduction</tspan>
+					<tspan x="0" dy="18">de marge</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(37,585)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Comparaison: Changement</tspan>
+					<tspan x="0" dy="18">constant / divergences</tspan>
+					<tspan x="0" dy="18">/ instable</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(263,585)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Comparaison: S'inspirer</tspan>
+					<tspan x="0" dy="18">tâter le terrain</tspan>
+					<tspan x="0" dy="18">s'appuyer sur des preuves</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(543,585)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="6">Comparaison: modèles concurrents</tspan>
+					</text>
+					</g>
+					<g class="" transform=" translate(915,585)">
+					<text fill="rgb(19,36,84)" fill-opacity="0.9" font-weight="bold" font-family="Century Gothic,CenturyGothic,AppleGothic,sans-serif" font-size="18px" text-anchor="start">
+					<tspan x="0" dy="0">Comparaison: Essentiel / avantage</tspan>
+					<tspan x="0" dy="18">opérationnel</tspan>
+					</text>
+					</g>
+					<style><![CDATA[
+.evolutionEdge {
+	stroke-dasharray: 7;
+	stroke-dashoffset: 7;
+	animation: dash 3s linear forwards infinite;
+}
+
+
+.visibility0 {
+	opacity: 0.8;
+}
+
+
+
+.invisibility0 {
+	opacity: NaN;
+}
+
+
+	@keyframes dash {
+		from {
+			stroke-dashoffset: 100;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	.componentText {
+		background: transparent;
+		color: #fff;
+		resize: none;
+		border: 0 none;
+		width: 100%;
+		font-size: 0.8em;
+		outline: none;
+		height: 100%;
+		position: absolute;
+	}
+
+	]]></style>
+				</svg>
+

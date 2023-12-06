@@ -8,6 +8,29 @@ html {
   box-sizing: border-box;
 }
 
+
+.reveal .copyright {
+  position: absolute;
+  bottom: 0;
+  font-size: small; /* Set font size to small */
+  left: 0; /* Align to the left edge */
+  width: auto; /* Adjust the width as needed */
+  text-align: center;
+  color: black; /* And the text color */
+  height: 30px;
+}
+
+.reveal .copyright p {
+  margin: 0;
+  display: inline-block;
+}
+
+.reveal .copyright img {
+  height: 30px; /* Adjust the size of the image */
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
 .reveal .slides section {
   text-align: left;
 }
