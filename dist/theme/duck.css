@@ -35,7 +35,7 @@ html {
 }
 
 .reveal {
-  border: 50px solid rgba(0, 0, 0, 0); /* #ecedf3;*/
+  border: 35px solid rgba(0, 0, 0, 0); /* #ecedf3;*/
   box-sizing: border-box;
   height: 100%;
   width: 100%;
