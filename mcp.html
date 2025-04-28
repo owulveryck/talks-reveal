@@ -66,71 +66,80 @@
         
         <!-- Section 1: Contexte et fondamentaux -->
         <section data-background="#00AEC7">
-          <h1>Contexte et fondamentaux de l'IA conversationnelle</h1>
+          <h1>Contexte et fondamentaux des systèmes agents</h1>
         </section>
 
         <section>
-          <h2>Le Point de Départ : Les Chats "Stateless"</h2>
+          <h2>Définition d'un Agent et son Environnement</h2>
           <ul>
-            <li>Les systèmes de Chat (comme ChatGPT au début) sont fondamentalement <strong>"Stateless"</strong>.</li>
-            <li>Chaque nouvelle session repart de zéro.</li>
-            <li>Vider l'historique = Recommencer.</li>
-            <li class="fragment">Cela limite leur capacité à agir sur le long terme ou avec une mémoire persistante.</li>
+            <li>Un <strong>agent</strong> est une entité capable d'<strong>interagir avec un environnement</strong>.</li>
+            <li>L'<strong>environnement</strong> fournit des informations qui le rendent observable par l'agent.</li>
+            <li>L'environnement offre des <strong>capacités</strong> permettant à l'agent d'<strong>interagir</strong> avec lui et de le <strong>modifier</strong>.</li>
+            <li>Un agent qui ne peut pas modifier son environnement est inutile.</li>
           </ul>
         </section>
 
         <section>
-          <h2>Petite Précision : Agent ≠ Intelligent</h2>
+          <h2>Le Concept d'Autonomie</h2>
           <ul>
-            <li>Le terme "agent" n'implique pas *nécessairement* une intelligence complexe ou un raisonnement de type LLM.</li>
-            <li>Exemple : En gestion de configuration (Puppet, Chef, Ansible...), on utilise des <strong>agents</strong> depuis longtemps.</li>
-            <li>Ces agents interagissent avec un environnement (le serveur) et le modifient, mais suivent des instructions précises (<em>workflows</em>), sans autonomie décisionnelle avancée.</li>
+            <li>L'<strong>autonomie</strong> est une propriété variable d'un agent.</li>
+            <li>C'est la capacité d'agir de manière indépendante.</li>
+            <li>Il existe plusieurs <strong>niveaux d'autonomie</strong>.</li>
+            <li>Plus un agent est autonome, moins il a besoin d'interaction humaine.</li>
+            <li class="fragment">Ne pas confondre agents et workflows : un workflow est un processus d'exécution préprogrammé, un graphe d'exécution.</li>
           </ul>
         </section>
 
         <section>
-          <h2>C'est quoi un Système Agentique ? Et un Assistant ?</h2>
+          <h2>Environnements d'IA Actuels : Limitations</h2>
           <ul>
-            <li><strong>Agent :</strong> Une entité capable d'<strong>interagir</strong> avec un environnement et potentiellement de le <strong>modifier</strong>.</li>
-            <li><strong>Assistant :</strong> Aide, fournit des informations, mais agit peu ou pas directement sur l'environnement sans instruction explicite.</li>
-            <li><strong>Autonomie :</strong> La capacité de l'agent à prendre des décisions et agir sans intervention humaine constante. C'est un spectre.</li>
-            <li><strong>Différence clé :</strong> Un agent n'est pas un simple <em>workflow</em> (qui suit un processus pré-défini et rigide). Il peut s'adapter.</li>
-          </ul>
-          <aside class="notes">
-            La distinction Assistant/Agent est parfois floue, mais l'idée est qu'un agent a plus de capacité d'action autonome.
-          </aside>
-        </section>
-
-        <section>
-          <h2>Rappels Rapides sur les LLM</h2>
-          <ul>
-            <li><strong>LLM (Large Language Model) :</strong> Modèle IA entraîné sur d'énormes quantités de texte pour comprendre et générer du langage naturel.</li>
-            <li><strong>GPT (Generative Pre-trained Transformer) :</strong> Une architecture spécifique de LLM (populaire grâce à OpenAI).</li>
-            <li><strong>Génération :</strong> Capacité à produire du texte (réponses, code, etc.).</li>
-            <li><strong>Context Window (Fenêtre de Contexte) :</strong> La quantité d'information (mesurée en <em>tokens</em>) que le modèle peut prendre en compte à un instant T. Limite sa "mémoire" à court terme.</li>
-            <li><strong>Token :</strong> Unité de base du texte pour le LLM (souvent un mot ou une partie de mot).</li>
+            <li>L'environnement le plus courant aujourd'hui : <strong>la fenêtre de chat</strong>.</li>
+            <li>Les LLMs génèrent du texte dans une <strong>fenêtre de contexte limitée</strong>.</li>
+            <li>L'environnement est <strong>fermé</strong>, limitant les capacités d'action de l'agent.</li>
+            <li class="fragment">Pour être vraiment utiles, les agents IA doivent pouvoir interagir avec un <strong>environnement plus large</strong> que la seule fenêtre de chat.</li>
           </ul>
         </section>
 
         <section>
-          <h2>La Révolution des Assistants</h2>
+          <h2>Le Problème des Environnements Élargis</h2>
+          <div class="split-layout">
+            <div class="split-left">
+              <ul>
+                <li>Les humains interagissent avec de multiples environnements numériques.</li>
+                <li>Les agents IA sont limités à leur fenêtre de chat.</li>
+                <li>Comment permettre aux agents d'interagir avec <strong>n'importe quel environnement</strong> ?</li>
+                <li>Comment leur fournir des <strong>outils numériques</strong> ?</li>
+              </ul>
+            </div>
+            <div class="split-right">
+              <img src="coorp/images/environnement.png" alt="Illustration d'environnements d'agents" height="250">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Problème : Liaison Agent-Outil</h2>
           <ul>
-            <li>L'arrivée de modèles comme <strong>ChatGPT</strong> a marqué un tournant.</li>
-            <li>Des capacités de compréhension et de génération de langage bluffantes.</li>
-            <li>Naissance massive d'<strong>assistants</strong> capables de converser, résumer, traduire, etc.</li>
-            <li class="fragment">Mais... <em>raisonnent-ils vraiment ?</em> Ou sont-ils de très bons "perroquets stochastiques" ? Le débat est ouvert.</li>
-            <li class="fragment">Leur capacité à <strong>agir</strong> restait limitée initialement.</li>
+            <li>Les agents IA comprennent le langage naturel mais pas les API structurées.</li>
+            <li>Nous avons besoin d'un <strong>mécanisme de liaison</strong> entre :
+              <ul>
+                <li>La requête en langage naturel de l'agent</li>
+                <li>L'appel structuré à l'outil</li>
+              </ul>
+            </li>
+            <li>Les SDK existants créent un <strong>couplage fort</strong> entre l'agent et l'outil.</li>
+            <li>Idéalement, les outils devraient être <strong>séparés</strong> de l'agent pour plus de flexibilité.</li>
           </ul>
         </section>
 
         <section>
-          <h2>L'Agentivité : Le Nouveau Souffle</h2>
+          <h2>Avantages de la Séparation Agent-Outil</h2>
           <ul>
-            <li>Le concept d'agent n'est pas nouveau (cf. gestion de conf).</li>
-            <li>Rappel : Un système capable d'<strong>interagir</strong> avec un environnement et de le <strong>modifier</strong>.</li>
-            <li><strong>Ce qui change radicalement :</strong> Le niveau d'<strong>autonomie</strong> que les LLM permettent d'atteindre.</li>
-            <li>Grâce à leur capacité de "raisonnement" (ou du moins de planification et de décision basée sur le langage), les LLM peuvent piloter des actions de manière beaucoup plus flexible et autonome qu'un simple script.</li>
-            <li class="fragment">C'est là que le <strong>MCP</strong> entre en jeu : fournir le standard pour que ces LLM puissent piloter des outils et donc <strong>agir</strong>.</li>
+            <li><strong>Évolution indépendante</strong> : L'outil peut évoluer sans modifier l'agent.</li>
+            <li><strong>Proximité avec le métier</strong> : Le propriétaire de l'outil est proche de l'environnement métier.</li>
+            <li><strong>Contrôle des ressources exposées</strong> : Le propriétaire décide quelles ressources et actions exposer.</li>
+            <li><strong>Écosystème d'outils</strong> : Création d'un Web d'outils utilisables par n'importe quel agent.</li>
+            <li class="fragment">Pour réaliser cette vision, nous avons besoin d'un <strong>standard</strong>...</li>
           </ul>
         </section>
 
@@ -140,12 +149,40 @@
         </section>
 
         <section>
-          <h2>Qu'est-ce que le MCP ?</h2>
+          <h2>Le Model Context Protocol (MCP)</h2>
           <ul>
             <li><strong>Contexte :</strong> Protocole apparu fin 2023 (Décembre), poussé par <em>Anthropic</em>.</li>
             <li><strong>Objectif :</strong> Standardiser comment les <strong>outils logiciels</strong> exposent leurs capacités aux <strong>intelligences artificielles (IA)</strong>.</li>
-            <li><strong>Concept Clé :</strong> Le "chaînon manquant" pour transformer les <em>assistants</em> (qui assistent) en <em>agents</em> (qui agissent) en leur donnant des outils standardisés.</li>
-            <li><strong>Définition Simple :</strong> Un standard pour qu'un outil expose des services utilisables par une IA (et non directement par un humain).</li>
+            <li><strong>Définition :</strong> Un standard pour qu'un outil expose des services utilisables par une IA (et non directement par un humain).</li>
+            <li><strong>Concept Clé :</strong> Le "chaînon manquant" pour transformer les <em>assistants</em> (qui assistent) en <em>agents</em> (qui agissent).</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Exemple Concret de Description d'Outil MCP</h2>
+          <pre><code class="json">
+{
+  "function_name": "get_weather",
+  "description": "Récupère la météo actuelle pour un emplacement donné.",
+  "arguments": [
+    {
+      "name": "location",
+      "type": "string",
+      "description": "La ville ou la région pour laquelle récupérer les données météo."
+    }
+  ]
+}
+          </code></pre>
+          <p>Cette description est sérialisée et rendue accessible via un réseau, permettant à n'importe quel agent de comprendre et utiliser cet outil.</p>
+        </section>
+        
+        <section>
+          <h2>Concepts Clés de MCP</h2>
+          <ul>
+            <li><strong>MCP Servers :</strong> Les outils exposés selon le standard MCP.</li>
+            <li><strong>Hôte (Host) :</strong> L'application qui exécute le modèle de langage.</li>
+            <li><strong>MCP Client :</strong> L'implémentation dans l'hôte qui permet de communiquer avec les serveurs MCP.</li>
+            <li class="fragment">MCP est un standard <strong>d'exposition et de communication</strong> qui enrichit les agents avec des outils utilisables immédiatement.</li>
           </ul>
         </section>
 
@@ -155,11 +192,33 @@
         </section>
 
         <section>
-          <h2>Le MCP : Cadre Technique et Fonctionnel</h2>
+          <h2>Les Capacités Exposées par un Serveur MCP</h2>
           <ul>
-            <li><strong>Technique :</strong> Définit la communication (<em>JSON-RPC</em>, <em>Server-Sent Events</em> pour les notifications futures).</li>
-            <li><strong>Fonctionnel :</strong> Définit les types d'échanges (demandes de l'IA, réponses de l'outil MCP).</li>
-            <li><strong>Métaphore Centrale :</strong> Le MCP est aux IA ce que les API (REST) ont été à la transformation digitale -> <em>Les API du Futur</em>.</li>
+            <li><strong>Ressources :</strong> Exposer des données issues d'un environnement
+              <ul>
+                <li><em>Ex: liste de produits, prix d'une action, profil utilisateur</em></li>
+              </ul>
+            </li>
+            <li><strong>Outils (Actions) :</strong> Fournir des fonctions pour exécuter des tâches
+              <ul>
+                <li><em>Ex: calculer une distance, envoyer un email, réserver un vol</em></li>
+              </ul>
+            </li>
+            <li><strong>Prompts :</strong> Fournir des modèles de texte pour aider l'hôte à raisonner
+              <ul>
+                <li><em>Ex: templates de description, règles de formatage, bases de connaissances</em></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Aspects Techniques de MCP</h2>
+          <ul>
+            <li><strong>Format :</strong> Communication basée sur <em>JSON-RPC</em>.</li>
+            <li><strong>Extensions futures :</strong> <em>Server-Sent Events</em> pour les notifications asynchrones.</li>
+            <li><strong>Découverte :</strong> Mécanismes pour que les agents trouvent et comprennent les outils disponibles.</li>
+            <li><strong>Métaphore Centrale :</strong> MCP est aux IA ce que les API REST ont été à la transformation digitale → <em>Les API du Futur</em>.</li>
           </ul>
         </section>
 
@@ -294,9 +353,13 @@
         </section>
 
         <section>
-          <h2>Conclusion : Wrap-up</h2>
-          <p><strong>MCP s'impose comme le standard</strong> pour l'interaction IA-Outils, jouant le rôle de <strong>catalyseur pour l'ère des agents IA</strong>, similaire aux API REST pour le web.</p>
-          <p>L'enjeu clé est de concevoir des outils avec une bonne <em>affordance pour l'IA</em>.</p>
+          <h2>MCP : Le Catalyseur de la Prochaine Révolution Numérique</h2>
+          <ol>
+            <li><strong>1ère révolution</strong> : Internet (omnicanal, services accessibles depuis le canapé)</li>
+            <li><strong>2ème révolution</strong> : Smartphone (services numériques nomades, accessibles partout)</li>
+            <li><strong>Prochaine révolution</strong> : <em>Délégation des tâches cognitives</em> à des assistants IA</li>
+          </ol>
+          <p class="fragment">MCP joue le même rôle catalyseur pour l'ère des agents IA que les <strong>API REST</strong> pour le web.</p>
         </section>
 
         <section>
@@ -321,6 +384,17 @@
             Les cas d'usage les plus immédiats et à forte valeur ajoutée concernent l'<strong>amélioration de la productivité des équipes IT</strong> (ex: mémoire partagée, interaction CI/CD, BDD...).
           </blockquote>
           <p><em>C'est un bon point de départ pour <strong>expérimenter, itérer</strong> et développer l'expertise MCP en interne.</em></p>
+        </section>
+        
+        <section>
+          <h2>Nouvel Enjeu Commercial</h2>
+          <ul>
+            <li>Quel assistant obtiendra votre faveur ?</li>
+            <li>L'assistant qui gagnera détiendra des millions d'utilisateurs potentiels</li>
+            <li>Il pourra diriger ces utilisateurs vers des entreprises selon la volonté du modèle</li>
+            <li class="fragment">Quelles données ces assistants collecteront-ils pour améliorer l'utilisation de certains outils ?</li>
+            <li class="fragment">Choisiront-ils l'outil de votre entreprise préférée... ou celui fourni par l'entreprise qui paie le plus ?</li>
+          </ul>
         </section>
 
       </div>
