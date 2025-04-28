@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>MCP: Les API du Futur pour l'IA</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Présentation sur le Model Context Protocol (MCP) et son rôle dans l'interaction entre IA et outils">
+		<meta name="author" content="Olivier Wulveryck">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -211,6 +211,37 @@
             </li>
           </ul>
         </section>
+
+        <section>
+          <h2>La Notion d'Affordance pour l'IA</h2>
+          <ul>
+            <li><strong>Affordance :</strong> Qualité d'un objet qui suggère sa propre utilisation.</li>
+            <li>Pour un LLM interagissant via texte, l'affordance est fournie par :</li>
+            <ul>
+              <li>La description textuelle de l'outil</li>
+              <li>Les noms et paramètres des fonctions</li>
+              <li>La documentation associée</li>
+              <li>Les prompts exposés</li>
+            </ul>
+            <li>Sans ces indices textuels clairs, le LLM ne peut pas facilement percevoir <strong>l'utilité</strong> de l'outil.</li>
+            <li>Un outil mal documenté ne sera pas <strong>utilisé</strong>, même s'il est potentiellement utile.</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Les 3 U du MCP : Useful, Usable, Used</h2>
+          <ul>
+            <li><strong>Useful (Utile) :</strong> L'outil résout un problème réel pour l'IA.</li>
+            <li><strong>Usable (Utilisable) :</strong> L'outil est accessible via le protocole MCP standard.</li>
+            <li><strong>Used (Utilisé) :</strong> L'outil est effectivement choisi et employé par l'IA.</li>
+            <li class="fragment">Les prompts MCP sont essentiels pour garantir ces trois aspects :</li>
+            <ul class="fragment">
+              <li>Ils guident l'IA sur <em>quand</em> et <em>comment</em> utiliser l'outil efficacement</li>
+              <li>Ils facilitent l'injection du contexte pertinent</li>
+              <li>Ils rendent les capacités de l'outil <em>découvrables</em> par l'IA</li>
+            </ul>
+          </ul>
+        </section>
         
         <section>
           <h2>Aspects Techniques de MCP</h2>
@@ -249,6 +280,63 @@
             <li><strong>Resource :</strong> Équivalent <code>GET</code> REST. Permet à l'agent de <em>récupérer</em> de l'information (ex: recherche web, état d'un système).</li>
             <li><strong>Prompt :</strong> <em>(Souvent sous-estimé mais crucial !)</em> L'outil MCP peut <em>enrichir le prompt</em> de l'IA pour l'aider à décider <strong>si, quand et comment</strong> utiliser l'outil. C'est la clé de l'<em>affordance pour l'IA</em>.</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>L'Importance des Prompts dans MCP</h2>
+          <ul>
+            <li>Les prompts MCP permettent aux serveurs de définir des <strong>templates réutilisables</strong> et des <strong>workflows</strong> pour l'IA.</li>
+            <li>Avantages clés :</li>
+            <ul>
+              <li>Simplifient la <strong>collecte de contexte</strong> pertinent (fichiers de code, logs, etc.)</li>
+              <li>Rendent les capacités du serveur <strong>découvrables</strong> par l'IA</li>
+              <li>Transforment un potentiel abstrait en <strong>actions concrètes</strong> immédiatement disponibles</li>
+            </ul>
+            <li>Le prompt aide l'IA à comprendre :</li>
+            <ul>
+              <li><em>Pourquoi</em> utiliser cet outil pour résoudre le problème cible</li>
+              <li><em>Comment</em> l'utiliser efficacement</li>
+            </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Exemple d'Utilisation d'Ontologies avec MCP</h2>
+          <div class="split-layout">
+            <div class="split-left">
+              <ul>
+                <li>Un graphe de connaissances stocke des relations:</li>
+                <ul>
+                  <li>"MCP" "améliore" "Agents IA"</li>
+                </ul>
+                <li>Problème : Inconsistance des termes</li>
+                <ul>
+                  <li>L'IA pourrait utiliser "améliore" ou "renforce" ou "augmente"</li>
+                </ul>
+                <li>Solution : Prompt MCP avec <strong>ontologie</strong></li>
+                <ul>
+                  <li>Définit les classes (Protocole, Théorie, Personne)</li>
+                  <li>Standardise les prédicats autorisés (améliore, écrit_par)</li>
+                  <li>Guide l'IA pour maintenir la cohérence</li>
+                </ul>
+              </ul>
+            </div>
+            <div class="split-right">
+              <pre><code class="language-json">
+{
+  "function_name": "extract_relations",
+  "description": "Analyse un texte selon une ontologie précise",
+  "arguments": [
+    {
+      "name": "text",
+      "type": "string",
+      "description": "Le texte à analyser"
+    }
+  ]
+}
+              </code></pre>
+            </div>
+          </div>
         </section>
 
         <!-- Section 6: Importance et adoption -->
@@ -327,6 +415,26 @@
           </ul>
         </section>
 
+        <section>
+          <h2>Conception d'Outils MCP pour l'IA</h2>
+          <ul>
+            <li><strong>Nouveau Paradigme :</strong> Concevoir pour un utilisateur IA, pas humain.</li>
+            <li><strong>Affordance Textuelle :</strong> Au lieu d'indices visuels, fournir :</li>
+            <ul>
+              <li>Descriptions textuelles claires</li>
+              <li>Fonctions précises (Actions/Resources)</li>
+              <li>Prompts MCP intelligents</li>
+            </ul>
+            <li><strong>Cycle d'Évolution :</strong></li>
+            <ul>
+              <li>Phase I (Genèse) : Preuve de concept → <em>Terminé</em></li>
+              <li>Phase II (Construction) : Outils MCP fonctionnels → <em>Actuel</em></li>
+              <li>Phase III (Produit) : Écosystème d'outils MCP → <em>Futur</em></li>
+            </ul>
+            <li>Un outil techniquement <strong>utilisable</strong> mais mal conçu peut échouer à être <strong>utile</strong> ou <strong>utilisé</strong>.</li>
+          </ul>
+        </section>
+
         <!-- Section 10: Cas d'usage spécifique -->
         <section data-background="#00AEC7">
           <h1>Cas d'usage spécifique : productivité des développeurs</h1>
@@ -344,6 +452,27 @@
                 <li>Améliore cohérence et efficacité des IA individuelles au sein de l'équipe.</li>
               </ul>
             </li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Exemple Concret : Graphe de Connaissances MCP</h2>
+          <ul>
+            <li><strong>Fonctionnement :</strong> Stockage de relations sous forme de "triplets"</li>
+            <ul>
+              <li><em>Exemple : "MCP" "améliore" "Agents IA"</em></li>
+            </ul>
+            <li><strong>Défi :</strong> Inconsistance des termes créés par l'IA</li>
+            <ul>
+              <li><em>Session 1 : "MCP" "evolutionAnalyzedWith" "Wardley's theory"</em></li>
+              <li><em>Session 2 : "Wardley's theory" "applied_to" "MCP evolution"</em></li>
+            </ul>
+            <li><strong>Solution :</strong> Prompts MCP avec ontologie définie</li>
+            <ul>
+              <li>Définit les classes autorisées (Protocole, Théorie, Personne)</li>
+              <li>Standardise les relations (analysedUsing, writtenBy)</li>
+              <li>Guide l'IA pour maintenir la cohérence du graphe</li>
+            </ul>
           </ul>
         </section>
 
@@ -385,6 +514,14 @@
           </blockquote>
           <p><em>C'est un bon point de départ pour <strong>expérimenter, itérer</strong> et développer l'expertise MCP en interne.</em></p>
         </section>
+
+        <section>
+          <h2>Takeaway 4 : Respectez les 3 U</h2>
+          <blockquote>
+            Un outil MCP réussi doit être <strong>Utile</strong> (résoudre un problème réel), <strong>Utilisable</strong> (accessible via le protocole standard), et <strong>Utilisé</strong> (effectivement choisi par l'IA).
+          </blockquote>
+          <p><em>L'affordance pour l'IA est la clé - un outil mal documenté ou sans prompts clairs sera ignoré.</em></p>
+        </section>
         
         <section>
           <h2>Nouvel Enjeu Commercial</h2>
@@ -394,6 +531,17 @@
             <li>Il pourra diriger ces utilisateurs vers des entreprises selon la volonté du modèle</li>
             <li class="fragment">Quelles données ces assistants collecteront-ils pour améliorer l'utilisation de certains outils ?</li>
             <li class="fragment">Choisiront-ils l'outil de votre entreprise préférée... ou celui fourni par l'entreprise qui paie le plus ?</li>
+          </ul>
+        </section>
+        
+        <section>
+          <h2>Prochaines Étapes</h2>
+          <ul>
+            <li>Explorer les <strong>notifications asynchrones</strong> MCP pour transformer les assistants en véritables agents</li>
+            <li>Développer des <strong>ontologies standardisées</strong> pour différents domaines métier</li>
+            <li>Créer des <strong>écosystèmes d'outils MCP</strong> interopérables</li>
+            <li>Mettre en place des <strong>standards de gouvernance</strong> pour les outils MCP internes</li>
+            <li>Intégrer les considérations MCP dans notre <strong>stratégie d'architecture d'entreprise</strong></li>
           </ul>
         </section>
 
