@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/octo.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+
+	<body>
+		<img class="header-tete" src="coorp/images/tete.png"/>
+		<div class="footer-text">OCTO Part of Accenture © 2025 - All rights reserved</div>
+		<div class="better-way">There is a better way</div>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h2>MCP: Les API du Futur pour l'IA</h2>
+          <p><em>Standardiser l'interaction entre IA et Outils</em></p>
+        </section>
+
+        <section>
+          <h2>Le Point de Départ : Les Chats "Stateless"</h2>
+          <ul>
+            <li>Les systèmes de Chat (comme ChatGPT au début) sont fondamentalement <strong>"Stateless"</strong>.</li>
+            <li>Chaque nouvelle session repart de zéro.</li>
+            <li>Vider l'historique = Recommencer.</li>
+            <li class="fragment">Cela limite leur capacité à agir sur le long terme ou avec une mémoire persistante.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Petite Précision : Agent ≠ Intelligent</h2>
+          <ul>
+            <li>Le terme "agent" n'implique pas *nécessairement* une intelligence complexe ou un raisonnement de type LLM.</li>
+            <li>Exemple : En gestion de configuration (Puppet, Chef, Ansible...), on utilise des <strong>agents</strong> depuis longtemps.</li>
+            <li>Ces agents interagissent avec un environnement (le serveur) et le modifient, mais suivent des instructions précises (<em>workflows</em>), sans autonomie décisionnelle avancée.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>C'est quoi un Système Agentique ? Et un Assistant ?</h2>
+          <ul>
+            <li><strong>Agent :</strong> Une entité capable d’<strong>interagir</strong> avec un environnement et potentiellement de le <strong>modifier</strong>.</li>
+            <li><strong>Assistant :</strong> Aide, fournit des informations, mais agit peu ou pas directement sur l'environnement sans instruction explicite.</li>
+            <li><strong>Autonomie :</strong> La capacité de l'agent à prendre des décisions et agir sans intervention humaine constante. C'est un spectre.</li>
+            <li><strong>Différence clé :</strong> Un agent n'est pas un simple <em>workflow</em> (qui suit un processus pré-défini et rigide). Il peut s'adapter.</li>
+          </ul>
+          <aside class="notes">
+            La distinction Assistant/Agent est parfois floue, mais l'idée est qu'un agent a plus de capacité d'action autonome.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Rappels Rapides sur les LLM</h2>
+          <ul>
+            <li><strong>LLM (Large Language Model) :</strong> Modèle IA entraîné sur d'énormes quantités de texte pour comprendre et générer du langage naturel.</li>
+            <li><strong>GPT (Generative Pre-trained Transformer) :</strong> Une architecture spécifique de LLM (populaire grâce à OpenAI).</li>
+            <li><strong>Génération :</strong> Capacité à produire du texte (réponses, code, etc.).</li>
+            <li><strong>Context Window (Fenêtre de Contexte) :</strong> La quantité d'information (mesurée en <em>tokens</em>) que le modèle peut prendre en compte à un instant T. Limite sa "mémoire" à court terme.</li>
+            <li><strong>Token :</strong> Unité de base du texte pour le LLM (souvent un mot ou une partie de mot).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>La Révolution des Assistants</h2>
+          <ul>
+            <li>L'arrivée de modèles comme <strong>ChatGPT</strong> a marqué un tournant.</li>
+            <li>Des capacités de compréhension et de génération de langage bluffantes.</li>
+            <li>Naissance massive d'<strong>assistants</strong> capables de converser, résumer, traduire, etc.</li>
+            <li class="fragment">Mais... <em>raisonnent-ils vraiment ?</em> Ou sont-ils de très bons "perroquets stochastiques" ? Le débat est ouvert.</li>
+            <li class="fragment">Leur capacité à <strong>agir</strong> restait limitée initialement.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>L'Agentivité : Le Nouveau Souffle</h2>
+          <ul>
+            <li>Le concept d'agent n'est pas nouveau (cf. gestion de conf).</li>
+            <li>Rappel : Un système capable d'<strong>interagir</strong> avec un environnement et de le <strong>modifier</strong>.</li>
+            <li><strong>Ce qui change radicalement :</strong> Le niveau d'<strong>autonomie</strong> que les LLM permettent d'atteindre.</li>
+            <li>Grâce à leur capacité de "raisonnement" (ou du moins de planification et de décision basée sur le langage), les LLM peuvent piloter des actions de manière beaucoup plus flexible et autonome qu'un simple script.</li>
+            <li class="fragment">C'est là que le <strong>MCP</strong> entre en jeu : fournir le standard pour que ces LLM puissent piloter des outils et donc <strong>agir</strong>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>MCP: Les API du Futur pour l'IA</h2>
+          <p><em>Standardiser l'interaction entre IA et Outils</em></p>
+        </section>
+
+        <section>
+          <h2>1. Introduction : Qu'est-ce que le MCP ?</h2>
+          <ul>
+            <li><strong>Contexte :</strong> Protocole apparu fin 2023 (Décembre), poussé par <em>Anthropic</em>.</li>
+            <li><strong>Objectif :</strong> Standardiser comment les <strong>outils logiciels</strong> exposent leurs capacités aux <strong>intelligences artificielles (IA)</strong>.</li>
+            <li><strong>Concept Clé :</strong> Le "chaînon manquant" pour transformer les <em>assistants</em> (qui assistent) en <em>agents</em> (qui agissent) en leur donnant des outils standardisés.</li>
+            <li><strong>Définition Simple :</strong> Un standard pour qu'un outil expose des services utilisables par une IA (et non directement par un humain).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>2. Le MCP : Cadre Technique et Fonctionnel</h2>
+          <ul>
+            <li><strong>Technique :</strong> Définit la communication (<em>JSON-RPC</em>, <em>Server-Sent Events</em> pour les notifications futures).</li>
+            <li><strong>Fonctionnel :</strong> Définit les types d'échanges (demandes de l'IA, réponses de l'outil MCP).</li>
+            <li><strong>Métaphore Centrale :</strong> Le MCP est aux IA ce que les API (REST) ont été à la transformation digitale -> <em>Les API du Futur</em>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Analogie : MCP vs API REST</h2>
+          <ul>
+            <li><strong>Rappel API REST :</strong> Catalyseur de la transformation digitale, exposition des capacités logicielles.</li>
+            <li><strong>Parallèle MCP :</strong> Même rôle de catalyseur, mais l'<em>affordance</em> (la capacité d'un produit à suggérer sa propre utilisation) est conçue <strong>pour les IA</strong>.</li>
+            <li><strong>Vision :</strong> Changement de paradigme : interaction via des agents IA qui utilisent les outils exposés en MCP, plutôt qu'interaction humaine directe avec l'UI/API.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Composants Fondamentaux du MCP</h2>
+          <p>Trois capacités de base exposées par un outil MCP :</p>
+          <ul>
+            <li><strong>Action :</strong> Équivalent <code>POST</code> REST. Permet à l'agent de <em>modifier</em> l'état du monde extérieur ou d'effectuer une tâche.</li>
+            <li><strong>Resource :</strong> Équivalent <code>GET</code> REST. Permet à l'agent de <em>récupérer</em> de l'information (ex: recherche web, état d'un système).</li>
+            <li><strong>Prompt :</strong> <em>(Souvent sous-estimé mais crucial !)</em> L'outil MCP peut <em>enrichir le prompt</em> de l'IA pour l'aider à décider <strong>si, quand et comment</strong> utiliser l'outil. C'est la clé de l'<em>affordance pour l'IA</em>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Importance et Adoption du MCP</h2>
+          <ul>
+            <li><strong>Standard de Fait :</strong> Accepté largement (Anthropic, OpenAI, Google...), devenant le standard d'exposition d'outils pour IA.</li>
+            <li><strong>Écosystème :</strong> Permet de construire un écosystème d'outils interopérables, pilotés par l'IA (similaire à l'écosystème API).</li>
+            <li><strong>Catalyseur :</strong> Accélère la révolution numérique de l'IA et des agents.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. Cas d'Usage Concrets et Actuels</h2>
+          <ul>
+            <li><strong>Premiers Utilisateurs :</strong> Développeurs et professionnels de l'IT (environnement virtuel facile).
+              <ul><li>Exemples d'outils utilisant MCP : <em>Cursor, Cloud Code, Manus...</em></li></ul>
+            </li>
+            <li><strong>Intérêt de Créer ses Outils MCP :</strong>
+              <ul>
+                <li>Interagir avec systèmes internes : Base de connaissances (<em>potentiellement au-delà du RAG classique</em>), CI/CD, BDD (ex: SQL en langage naturel).</li>
+                <li>Exposer des capacités métiers spécifiques à l'IA.</li>
+              </ul>
+            </li>
+            <li><strong>Écosystème Externe :</strong> Grands éditeurs (<em>Salesforce, ServiceNow...</em>) proposent des serveurs MCP pour intégration IA.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>7. Comment Aborder le MCP ?</h2>
+          <ul>
+            <li><strong>Fondations Solides :</strong> S'appuie sur des savoir-faire éprouvés en ingénierie logicielle (concevoir des outils utiles, utilisables, utilisés).</li>
+            <li><strong>Stratégie de Démarrage :</strong>
+              <ul>
+                <li><strong>Analyse :</strong> Workflows pertinents, cadrage besoin ("Situational Awareness").</li>
+                <li><strong>Conception :</strong> Architecture classique (ex: Hexagonale), MCP = un adaptateur/port. Coexistence avec REST naturelle.</li>
+                <li><strong>Développement Itératif :</strong> Commencer simple -> Tester -> Mesurer l'usage -> Capitaliser.</li>
+              </ul>
+            </li>
+            <li><strong>Nécessité :</strong> Sensibilisation des équipes aux enjeux et possibilités.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Évolution Future et Défis</h2>
+          <ul>
+            <li><strong>Prochaine Étape MCP :</strong> "Crafter" des services de qualité (au-delà fonction -> affordance, utilité, utilisabilité pour l'IA).</li>
+            <li><strong>Vers de Vrais Agents :</strong> Implémentation des <em>notifications asynchrones</em> MCP (prévu) pour les tâches longues.</li>
+            <li><strong>Agent-to-Agent (A2A) :</strong> Protocole futur pour communication inter-agents (jugé plus lointain/prématuré).</li>
+            <li><strong>Défis Actuels :</strong>
+              <ul>
+                <li><strong>Sécurité & Accréditation :</strong> Non spécifiées par défaut dans le protocole (à ajouter au-dessus, comme pour REST/OAuth).</li>
+                <li><strong>Gouvernance :</strong> Risque de prolifération -> besoin futur de plateforme/standards internes.</li>
+                <li><strong>Architecture :</strong> Déploiement (MCP centralisé vs local) ?</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>9. Cas d'Usage : Améliorer la Productivité des Développeurs</h2>
+          <ul>
+            <li><strong>Problème :</strong> IA devs (Copilot...) ont contextes isolés, mémoire limitée à la session/base de code. Manque de contexte partagé de l'équipe.</li>
+            <li><strong>Solution MCP :</strong> Serveur MCP exposant une <em>"mémoire partagée"</em> (ex: via Knowledge Graph) pour l'équipe.</li>
+            <li><strong>Bénéfices :</strong>
+              <ul>
+                <li>L'IA peut interroger ce service (bonnes pratiques, décisions d'archi, guidelines projet...).</li>
+                <li>Co-construction base de connaissance via interactions IA.</li>
+                <li>Améliore cohérence et efficacité des IA individuelles au sein de l'équipe.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>MCP: Les API du Futur pour l'IA</h2>
+          <p><em>Standardiser l'interaction entre IA et Outils</em></p>
+        </section>
+
+        <section>
+          <h2>1. Introduction : Qu'est-ce que le MCP ?</h2>
+          <ul>
+            <li><strong>Contexte :</strong> Protocole apparu fin 2023 (Décembre), poussé par <em>Anthropic</em>.</li>
+            <li><strong>Objectif :</strong> Standardiser comment les <strong>outils logiciels</strong> exposent leurs capacités aux <strong>intelligences artificielles (IA)</strong>.</li>
+            <li><strong>Concept Clé :</strong> Le "chaînon manquant" pour transformer les <em>assistants</em> (qui assistent) en <em>agents</em> (qui agissent) en leur donnant des outils standardisés.</li>
+            <li><strong>Définition Simple :</strong> Un standard pour qu'un outil expose des services utilisables par une IA (et non directement par un humain).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>2. Le MCP : Cadre Technique et Fonctionnel</h2>
+          <ul>
+            <li><strong>Technique :</strong> Définit la communication (<em>JSON-RPC</em>, <em>Server-Sent Events</em> pour les notifications futures).</li>
+            <li><strong>Fonctionnel :</strong> Définit les types d'échanges (demandes de l'IA, réponses de l'outil MCP).</li>
+            <li><strong>Métaphore Centrale :</strong> Le MCP est aux IA ce que les API (REST) ont été à la transformation digitale -> <em>Les API du Futur</em>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Analogie : MCP vs API REST</h2>
+          <ul>
+            <li><strong>Rappel API REST :</strong> Catalyseur de la transformation digitale, exposition des capacités logicielles.</li>
+            <li><strong>Parallèle MCP :</strong> Même rôle de catalyseur, mais l'<em>affordance</em> (la capacité d'un produit à suggérer sa propre utilisation) est conçue <strong>pour les IA</strong>.</li>
+            <li><strong>Vision :</strong> Changement de paradigme : interaction via des agents IA qui utilisent les outils exposés en MCP, plutôt qu'interaction humaine directe avec l'UI/API.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Composants Fondamentaux du MCP</h2>
+          <p>Trois capacités de base exposées par un outil MCP :</p>
+          <ul>
+            <li><strong>Action :</strong> Équivalent <code>POST</code> REST. Permet à l'agent de <em>modifier</em> l'état du monde extérieur ou d'effectuer une tâche.</li>
+            <li><strong>Resource :</strong> Équivalent <code>GET</code> REST. Permet à l'agent de <em>récupérer</em> de l'information (ex: recherche web, état d'un système).</li>
+            <li><strong>Prompt :</strong> <em>(Souvent sous-estimé mais crucial !)</em> L'outil MCP peut <em>enrichir le prompt</em> de l'IA pour l'aider à décider <strong>si, quand et comment</strong> utiliser l'outil. C'est la clé de l'<em>affordance pour l'IA</em>.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Importance et Adoption du MCP</h2>
+          <ul>
+            <li><strong>Standard de Fait :</strong> Accepté largement (Anthropic, OpenAI, Google...), devenant le standard d'exposition d'outils pour IA.</li>
+            <li><strong>Écosystème :</strong> Permet de construire un écosystème d'outils interopérables, pilotés par l'IA (similaire à l'écosystème API).</li>
+            <li><strong>Catalyseur :</strong> Accélère la révolution numérique de l'IA et des agents.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. Cas d'Usage Concrets et Actuels</h2>
+          <ul>
+            <li><strong>Premiers Utilisateurs :</strong> Développeurs et professionnels de l'IT (environnement virtuel facile).
+              <ul><li>Exemples d'outils utilisant MCP : <em>Cursor, Cloud Code, Manus...</em></li></ul>
+            </li>
+            <li><strong>Intérêt de Créer ses Outils MCP :</strong>
+              <ul>
+                <li>Interagir avec systèmes internes : Base de connaissances (<em>potentiellement au-delà du RAG classique</em>), CI/CD, BDD (ex: SQL en langage naturel).</li>
+                <li>Exposer des capacités métiers spécifiques à l'IA.</li>
+              </ul>
+            </li>
+            <li><strong>Écosystème Externe :</strong> Grands éditeurs (<em>Salesforce, ServiceNow...</em>) proposent des serveurs MCP pour intégration IA.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>7. Comment Aborder le MCP ?</h2>
+          <ul>
+            <li><strong>Fondations Solides :</strong> S'appuie sur des savoir-faire éprouvés en ingénierie logicielle (concevoir des outils utiles, utilisables, utilisés).</li>
+            <li><strong>Stratégie de Démarrage :</strong>
+              <ul>
+                <li><strong>Analyse :</strong> Workflows pertinents, cadrage besoin ("Situational Awareness").</li>
+                <li><strong>Conception :</strong> Architecture classique (ex: Hexagonale), MCP = un adaptateur/port. Coexistence avec REST naturelle.</li>
+                <li><strong>Développement Itératif :</strong> Commencer simple -> Tester -> Mesurer l'usage -> Capitaliser.</li>
+              </ul>
+            </li>
+            <li><strong>Nécessité :</strong> Sensibilisation des équipes aux enjeux et possibilités.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>8. Évolution Future et Défis</h2>
+          <ul>
+            <li><strong>Prochaine Étape MCP :</strong> "Crafter" des services de qualité (au-delà fonction -> affordance, utilité, utilisabilité pour l'IA).</li>
+            <li><strong>Vers de Vrais Agents :</strong> Implémentation des <em>notifications asynchrones</em> MCP (prévu) pour les tâches longues.</li>
+            <li><strong>Agent-to-Agent (A2A) :</strong> Protocole futur pour communication inter-agents (jugé plus lointain/prématuré).</li>
+            <li><strong>Défis Actuels :</strong>
+              <ul>
+                <li><strong>Sécurité & Accréditation :</strong> Non spécifiées par défaut dans le protocole (à ajouter au-dessus, comme pour REST/OAuth).</li>
+                <li><strong>Gouvernance :</strong> Risque de prolifération -> besoin futur de plateforme/standards internes.</li>
+                <li><strong>Architecture :</strong> Déploiement (MCP centralisé vs local) ?</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>9. Cas d'Usage : Améliorer la Productivité des Développeurs</h2>
+          <ul>
+            <li><strong>Problème :</strong> IA devs (Copilot...) ont contextes isolés, mémoire limitée à la session/base de code. Manque de contexte partagé de l'équipe.</li>
+            <li><strong>Solution MCP :</strong> Serveur MCP exposant une <em>"mémoire partagée"</em> (ex: via Knowledge Graph) pour l'équipe.</li>
+            <li><strong>Bénéfices :</strong>
+              <ul>
+                <li>L'IA peut interroger ce service (bonnes pratiques, décisions d'archi, guidelines projet...).</li>
+                <li>Co-construction base de connaissance via interactions IA.</li>
+                <li>Améliore cohérence et efficacité des IA individuelles au sein de l'équipe.</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Conclusion : Wrap-up</h2>
+          <p><strong>MCP s'impose comme le standard</strong> pour l'interaction IA-Outils, jouant le rôle de <strong>catalyseur pour l'ère des agents IA</strong>, similaire aux API REST pour le web.</p>
+          <p>L'enjeu clé est de concevoir des outils avec une bonne <em>affordance pour l'IA</em>.</p>
+        </section>
+
+        <section>
+          <h2>Takeaway 1 : MCP = Les Nouvelles API</h2>
+          <blockquote>
+            Considérez MCP comme l'équivalent des API REST, mais destiné aux IA. C'est le <strong>standard émergent essentiel</strong> pour l'avenir des applications basées sur l'IA.
+          </blockquote>
+          <p><em>Il faut l'intégrer dans nos réflexions stratégiques et architecturales dès maintenant.</em></p>
+        </section>
+
+        <section>
+          <h2>Takeaway 2 : Pensez "Affordance pour l'IA"</h2>
+          <blockquote>
+            La valeur d'un outil MCP ne réside pas seulement dans sa fonction (Action/Resource), mais aussi dans sa capacité à <strong>guider l'IA sur son utilisation</strong> (<em>via le composant Prompt notamment</em>).
+          </blockquote>
+          <p><em>La conception doit viser à rendre l'outil facilement compréhensible et utilisable <strong>par l'IA</strong>.</em></p>
+        </section>
+
+        <section>
+          <h2>Takeaway 3 : Commencez par les Développeurs</h2>
+          <blockquote>
+            Les cas d'usage les plus immédiats et à forte valeur ajoutée concernent l'<strong>amélioration de la productivité des équipes IT</strong> (ex: mémoire partagée, interaction CI/CD, BDD...).
+          </blockquote>
+          <p><em>C'est un bon point de départ pour <strong>expérimenter, itérer</strong> et développer l'expertise MCP en interne.</em></p>
+        </section>
+
+
+      </div>
+
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+
+    // Also available as an ES module, see:
+    // https://revealjs.com/initialization/
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+    });
+
+    </script>
+
+  </body>
+</html>
