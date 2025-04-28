@@ -22,8 +22,21 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
     
     <!-- Ajout de Mermaid.js -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        startOnLoad: false,  // Ne pas initialiser au chargement initial
+        securityLevel: 'loose',
+        theme: 'default',
+        flowchart: {
+          htmlLabels: true,
+          curve: 'linear'
+        },
+        sequence: {
+          mirrorActors: false
+        }
+      });
+    </script>
 
     <style>
     :root {
@@ -1575,6 +1588,32 @@ graph TD
 
       // Learn about plugins: https://revealjs.com/plugins/
       plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+    });
+
+    // Fonction pour initialiser Mermaid
+    function initMermaid() {
+      try {
+        // On force la ré-initialisation complète
+        mermaid.run({
+          querySelector: '.mermaid'
+        });
+      } catch (error) {
+        console.error('Erreur lors de l\'initialisation de Mermaid:', error);
+      }
+    }
+    
+    // Initialiser Mermaid quand Reveal est prêt
+    Reveal.addEventListener('ready', function() {
+      // Attendre un court délai pour s'assurer que le DOM est bien prêt
+      setTimeout(initMermaid, 500);
+    });
+    
+    // Initialiser Mermaid sur chaque transition de slide
+    Reveal.addEventListener('slidechanged', function(event) {
+      if (event.currentSlide.querySelector('.mermaid')) {
+        // Ré-initialiser Mermaid chaque fois qu'un slide contenant un diagramme est affiché
+        setTimeout(initMermaid, 200);
+      }
     });
 
     </script>
