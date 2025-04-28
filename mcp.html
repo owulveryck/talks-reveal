@@ -1,41 +1,73 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-		<title>MCP: Les API du Futur pour l'IA</title>
+    <title>MCP: Les API du Futur pour l'IA</title>
 
-		<meta name="description" content="Présentation sur le Model Context Protocol (MCP) et son rôle dans l'interaction entre IA et outils">
-		<meta name="author" content="Olivier Wulveryck">
+    <meta name="description" content="Présentation sur le Model Context Protocol (MCP) et son rôle dans l'interaction entre IA et outils">
+    <meta name="author" content="Olivier Wulveryck">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/octo.css" id="theme">
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/octo.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-		
-		<style>
-			:root {
-				--r-main-font-size: 28px; /* Reduce text size from default 42px */
-			}
-			
-			.reveal .slides {
-				font-size: var(--r-main-font-size);
-			}
-		</style>
-	</head>
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-	<body>
-		<img class="header-tete" src="coorp/images/tete.png"/>
-		<div class="footer-text">OCTO Part of Accenture © 2025 - All rights reserved</div>
-		<div class="better-way">There is a better way</div>
+    <style>
+    :root {
+    --r-main-font-size: 28px; /* Reduce text size from default 42px */
+    }
+
+    .reveal .slides {
+    font-size: var(--r-main-font-size);
+    }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Définit l'espace horizontal ET vertical entre les éléments */
+    margin: 20px 0;
+  }
+  .flex-item {
+    /* width: calc(50% - 7.5px); Calcule la largeur pour deux colonnes avec un gap de 15px */
+    /* Ou plus simplement si le navigateur supporte bien flex-basis: */
+     flex-basis: calc(50% - 7.5px); /* Ajuster le 7.5px qui est la moitié du gap */
+     /* Alternative plus simple souvent suffisante: */
+     /* width: 48%; /* Ou une valeur similaire pour laisser de la place au gap */
+
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 10px;
+    box-sizing: border-box; /* Important si vous utilisez padding/border avec width % */
+  }
+  .flex-item h3 {
+    margin-top: 0;
+  }
+  .flex-item ul, .flex-item p {
+    font-size: 0.9em;
+  }
+  .flex-item.conseil {
+      background: #00AEC7;
+      color: white;
+  }
+   .flex-item.conseil p {
+      margin-bottom: 5px;
+  }
+
+    </style>
+  </head>
+
+  <body>
+    <img class="header-tete" src="coorp/images/tete.png"/>
+    <div class="footer-text">OCTO Part of Accenture © 2025 - All rights reserved</div>
+    <div class="better-way">There is a better way</div>
 
     <div class="reveal">
 
@@ -57,7 +89,7 @@
             </ul>
           </aside>
         </section>
-        
+
         <!-- Summary Slide -->
         <section>
           <h2>De l'IA Conversationnelle aux Agents qui Agissent</h2>
@@ -87,7 +119,7 @@
             <p>Timing: 3 minutes pour ce cadrage qui présente clairement la structure.</p>
           </aside>
         </section>
-        
+
         <!-- Section 1: Contexte et fondamentaux -->
         <section data-background="#00AEC7">
           <h1>Le problème: Des IA prisonnières de leur fenêtre de chat</h1>
@@ -112,21 +144,21 @@
           <aside class="notes">
             <h3>Concepts fondamentaux des agents - approche dynamique</h3>
             <p>Commençons par clarifier ce qu'est véritablement un agent IA, car c'est la base de toute notre discussion:</p>
-            
+
             <h4>La distinction clé:</h4>
             <ul>
               <li>Un simple <strong>modèle de langage</strong> génère du texte</li>
               <li>Un <strong>assistant</strong> aide à répondre à des questions</li>
               <li>Un véritable <strong>agent</strong> AGIT sur le monde qui l'entoure</li>
             </ul>
-            
+
             <h4>Points essentiels:</h4>
             <ul>
               <li>Un agent doit non seulement percevoir son environnement (lire, écouter), mais aussi pouvoir le modifier (écrire, exécuter des actions)</li>
               <li>Sans cette capacité d'action, une IA reste un simple "bavard intelligent"</li>
               <li>L'autonomie est un spectre: du très guidé (comme les assistants actuels) au totalement autonome (agents futuristes)</li>
             </ul>
-            
+
             <p>Insister sur cette métaphore du "bavard vs acteur" pour ancrer la différence fondamentale.</p>
             <p>Timing: 1 minute pour cette introduction conceptuelle directe.</p>
           </aside>
@@ -150,13 +182,13 @@
           <aside class="notes">
             <h3>La métaphore de la cage dorée</h3>
             <p>Utiliser cette image forte pour faire comprendre la situation actuelle:</p>
-            
+
             <ul>
               <li>Les IA modernes comme ChatGPT, Claude ou Gemini sont incroyablement intelligentes... mais cantonnées à une simple interface texte</li>
               <li>C'est comme avoir un expert de classe mondiale enfermé dans une pièce, capable de donner des conseils brillants mais incapable d'agir directement</li>
               <li>Pendant ce temps, nous (humains) naviguons librement entre applications, fichiers, web, emails, etc.</li>
             </ul>
-            
+
             <h3>L'analogie visuelle</h3>
             <p>Expliquer visuellement:</p>
             <ul>
@@ -164,7 +196,7 @@
               <li>Nous leur donnons une <strong>voix</strong> (ils peuvent nous répondre)</li>
               <li>Mais nous ne leur donnons pas de <strong>mains</strong> (ils ne peuvent pas agir par eux-mêmes)</li>
             </ul>
-            
+
             <p>Insister sur cette frustration: imaginez avoir toute la connaissance du monde mais être incapable d'effectuer la moindre action!</p>
             <p>Timing: 1 minute pour exposer clairement ce problème fondamental.</p>
           </aside>
@@ -194,19 +226,19 @@
           <aside class="notes">
             <h3>La métaphore de la traduction</h3>
             <p>Utiliser l'analogie linguistique pour illustrer le défi:</p>
-            
+
             <ul>
               <li>Les IA sont comme des personnes qui parlent uniquement français</li>
               <li>Les outils numériques sont comme des personnes qui parlent uniquement chinois</li>
               <li>Comment les faire communiquer efficacement?</li>
             </ul>
-            
+
             <h3>Les approches actuelles et leurs limites</h3>
             <ul>
               <li><strong>Solution bricolée</strong>: Chaque outil fournit son propre "traducteur" (SDK) → Fragmentation, inefficacité</li>
               <li><strong>Couplage fort</strong>: L'IA doit apprendre à utiliser spécifiquement CHAQUE outil → Complexité, maintenance</li>
             </ul>
-            
+
             <h3>La vision idéale</h3>
             <p>Ce qu'il nous faut, c'est un "esperanto numérique" - un langage standard que:</p>
             <ul>
@@ -214,7 +246,7 @@
               <li>Tous les outils peuvent facilement implémenter</li>
               <li>Qui permet une découverte et utilisation dynamique</li>
             </ul>
-            
+
             <p>Cette approche créerait un véritable "web d'outils" pour l'IA, similaire à ce que le web a fait pour l'information humaine.</p>
             <p>Timing: 1 minute pour présenter clairement ce défi de communication.</p>
           </aside>
@@ -232,13 +264,13 @@
           <aside class="notes">
             <h3>Explication dynamique de l'architecture MCP</h3>
             <p>L'image montre les composants essentiels de l'écosystème MCP:</p>
-            
+
             <ul>
               <li>À gauche, l'<strong>hôte</strong> (ChatGPT, Claude, etc.) qui contient le modèle de langage et l'interface utilisateur</li>
               <li>Au centre, le <strong>client MCP</strong> qui sert de "traducteur universel" entre l'IA et les outils</li>
               <li>À droite, divers <strong>serveurs MCP</strong> exposant différents outils et capacités</li>
             </ul>
-            
+
             <h3>La métaphore du web</h3>
             <p>Expliquer avec cette analogie puissante:</p>
             <ul>
@@ -247,7 +279,7 @@
               <li>Après: standard HTTP et HTML → explosion de la connectivité et des usages</li>
               <li>MCP fait la même chose pour les IA: standard universel d'accès aux outils</li>
             </ul>
-            
+
             <p>Le point crucial à souligner: avec MCP, les outils deviennent "découvrables" par l'IA - ils s'annoncent et expliquent comment les utiliser.</p>
             <p>Timing: 2 minutes pour cette vue d'ensemble architecturale.</p>
           </aside>
@@ -266,37 +298,37 @@
             </div>
             <div class="split-right">
               <pre><code class="json" data-trim>
-{
-  "function_name": "get_weather",
-  "description": "Récupère la météo pour un lieu.",
-  "arguments": [
-    {
-      "name": "location",
-      "type": "string",
-      "description": "La ville à consulter."
-    }
-  ]
-}
+                {
+                "function_name": "get_weather",
+                "description": "Récupère la météo pour un lieu.",
+                "arguments": [
+                {
+                "name": "location",
+                "type": "string",
+                "description": "La ville à consulter."
+                }
+                ]
+                }
               </code></pre>
             </div>
           </div>
           <aside class="notes">
             <h3>MCP expliqué simplement</h3>
             <p>Présenter MCP avec une analogie claire:</p>
-            
+
             <ul>
               <li>MCP est comme une "étiquette universelle" pour les outils numériques</li>
               <li>Chaque outil se présente: "Voici qui je suis, ce que je peux faire, et comment m'utiliser"</li>
               <li>L'IA peut alors "lire l'étiquette" et savoir exactement comment interagir avec l'outil</li>
             </ul>
-            
+
             <h3>Points clés à souligner</h3>
             <ul>
               <li><strong>Autodescription</strong>: L'outil se décrit lui-même en langage que l'IA comprend</li>
               <li><strong>Standardisation</strong>: Format uniforme adopté par toutes les grandes entreprises d'IA</li>
               <li><strong>Simplicité</strong>: Basé sur JSON, technologie largement maîtrisée</li>
             </ul>
-            
+
             <h3>L'exemple à l'écran</h3>
             <p>Expliquer l'exemple de code affiché:</p>
             <ul>
@@ -304,7 +336,7 @@
               <li>Description en langage naturel de ce qu'elle fait</li>
               <li>Arguments requis avec leurs types et explications</li>
             </ul>
-            
+
             <p>Clé de compréhension: MCP n'est pas une technologie compliquée - c'est une façon standardisée de décrire des outils pour que les IA puissent les comprendre et les utiliser sans intervention humaine.</p>
             <p>Timing: 2 minutes pour cette explication accessible du MCP.</p>
           </aside>
@@ -345,7 +377,7 @@
           <aside class="notes">
             <h3>Les trois super-pouvoirs MCP expliqués</h3>
             <p>Utiliser la métaphore des "sens" pour expliquer les capacités MCP:</p>
-            
+
             <h4>1. Resources - Les yeux de l'IA</h4>
             <ul>
               <li>Équivalent des requêtes GET en REST</li>
@@ -353,7 +385,7 @@
               <li>Exemples concrets: liste des produits, météo d'une ville, profil utilisateur</li>
               <li>Sans resources, l'IA reste limitée à sa connaissance interne</li>
             </ul>
-            
+
             <h4>2. Actions - Les mains de l'IA</h4>
             <ul>
               <li>Équivalent des requêtes POST en REST</li>
@@ -361,7 +393,7 @@
               <li>Exemples vivants: envoyer un email, passer une commande, programmer un rendez-vous</li>
               <li>C'est ce qui transforme réellement un assistant en agent</li>
             </ul>
-            
+
             <h4>3. Prompts - Le cerveau augmenté</h4>
             <ul>
               <li>Élément unique au MCP, sans équivalent REST</li>
@@ -369,15 +401,15 @@
               <li>Exemples: comment structurer une demande, quelles options sont disponibles</li>
               <li>Composant souvent négligé mais absolument crucial pour qu'un outil soit effectivement utilisé</li>
             </ul>
-            
+
             <p>Insister sur la synergie: c'est la combinaison des trois qui donne toute sa puissance au MCP.</p>
             <p>Timing: 3 minutes pour cette explication vivante des trois capacités.</p>
           </aside>
         </section>
-        
+
         <section>
           <h2>La règle des 3U: créer des outils que les IA utiliseront vraiment</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🎯 <strong>Useful</strong> (Utile)</h3>
@@ -396,7 +428,7 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="fragment">
             <h3>👆 <strong>Used</strong> (Utilisé) - Le plus souvent négligé!</h3>
             <ul>
@@ -405,25 +437,25 @@
               <li>Les <strong>Prompts MCP</strong> sont la clé du succès ici</li>
             </ul>
           </div>
-          
+
           <aside class="notes">
             <h3>Le cadre des 3U expliqué de façon dynamique</h3>
             <p>Présenter les 3U comme une règle fondamentale de conception:</p>
-            
+
             <h4>Useful (Utile) - Le fond</h4>
             <ul>
               <li>Un outil doit d'abord résoudre un problème réel et concret</li>
               <li>Question clé: "Quelle valeur unique cet outil apporte-t-il?"</li>
               <li>Anecdote: De nombreux outils échouent dès cette étape - ils n'ont pas de but clair</li>
             </ul>
-            
+
             <h4>Usable (Utilisable) - La forme</h4>
             <ul>
               <li>L'outil doit être techniquement accessible selon les standards MCP</li>
               <li>Aspect technique: implémentation correcte de JSON-RPC, description des fonctions, etc.</li>
               <li>C'est souvent l'aspect sur lequel les développeurs se concentrent le plus</li>
             </ul>
-            
+
             <h4>Used (Utilisé) - Le plus négligé!</h4>
             <ul>
               <li>L'aspect le plus subtil et souvent ignoré</li>
@@ -431,7 +463,7 @@
               <li>Analogie: un excellent restaurant caché dans une ruelle sans enseigne</li>
               <li>Les Prompts MCP jouent un rôle crucial ici - ils guident l'IA vers votre outil</li>
             </ul>
-            
+
             <p>Message clé: La plupart des outils échouent sur le "Used" - ils sont théoriquement bons mais pratiquement invisibles pour l'IA.</p>
             <p>Timing: 3 minutes pour cette explication des 3U qui est au cœur de la conception réussie pour l'IA.</p>
           </aside>
@@ -444,7 +476,7 @@
 
         <section>
           <h2>Une analogie puissante</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🧑‍💻 API REST = révolution du Web</h3>
@@ -463,7 +495,7 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="fragment">
             <table style="margin-top: 20px; width: 80%; margin-left: auto; margin-right: auto;">
               <thead>
@@ -488,49 +520,49 @@
               </tbody>
             </table>
           </div>
-          
+
           <aside class="notes">
-            <h3>L'analogie historique puissante</h3>
-            <p>Utiliser cette comparaison pour ancrer MCP dans un contexte historique familier:</p>
-            
-            <ul>
-              <li><strong>Rappel historique</strong>: Les API REST ont révolutionné le développement web
-                <ul>
-                  <li>Avant: Interfaces propriétaires, silos d'applications</li>
-                  <li>Après: Écosystème interconnecté, explosion des applications web</li>
-                </ul>
-              </li>
-              <li><strong>Parallèle MCP</strong>: Même potentiel transformateur pour l'IA
-                <ul>
-                  <li>Avant (maintenant): IA isolées, limitées à leur interface</li>
-                  <li>Après: Écosystème d'outils interconnectés, explosion des agents IA</li>
-                </ul>
-              </li>
-            </ul>
-            
-            <h3>Les correspondances techniques</h3>
-            <p>Clarifier les parallèles:</p>
-            <ul>
-              <li>GET REST → Resources MCP (accès en lecture)</li>
-              <li>POST REST → Actions MCP (modification)</li>
-              <li>NOUVEAUTÉ: Prompts MCP (sans équivalent REST direct)</li>
-            </ul>
-            
-            <h3>L'innovation fondamentale</h3>
-            <p>Insister sur ce point clé:</p>
-            <ul>
-              <li>REST supposait des développeurs humains qui lisaient la documentation</li>
-              <li>MCP est conçu pour que l'IA elle-même comprenne comment utiliser l'outil</li>
-              <li>C'est pourquoi les Prompts sont si cruciaux - ils sont le "manuel d'utilisation embarqué"</li>
-            </ul>
-            
-            <p>Timing: 2 minutes pour cette analogie historique qui permet de saisir l'importance du MCP.</p>
-          </aside>
+          <h3>L'analogie historique puissante</h3>
+          <p>Utiliser cette comparaison pour ancrer MCP dans un contexte historique familier:</p>
+
+          <ul>
+            <li><strong>Rappel historique</strong>: Les API REST ont révolutionné le développement web
+              <ul>
+                <li>Avant: Interfaces propriétaires, silos d'applications</li>
+                <li>Après: Écosystème interconnecté, explosion des applications web</li>
+              </ul>
+            </li>
+            <li><strong>Parallèle MCP</strong>: Même potentiel transformateur pour l'IA
+              <ul>
+                <li>Avant (maintenant): IA isolées, limitées à leur interface</li>
+                <li>Après: Écosystème d'outils interconnectés, explosion des agents IA</li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>Les correspondances techniques</h3>
+          <p>Clarifier les parallèles:</p>
+          <ul>
+            <li>GET REST → Resources MCP (accès en lecture)</li>
+            <li>POST REST → Actions MCP (modification)</li>
+            <li>NOUVEAUTÉ: Prompts MCP (sans équivalent REST direct)</li>
+          </ul>
+
+          <h3>L'innovation fondamentale</h3>
+          <p>Insister sur ce point clé:</p>
+          <ul>
+            <li>REST supposait des développeurs humains qui lisaient la documentation</li>
+            <li>MCP est conçu pour que l'IA elle-même comprenne comment utiliser l'outil</li>
+            <li>C'est pourquoi les Prompts sont si cruciaux - ils sont le "manuel d'utilisation embarqué"</li>
+          </ul>
+
+          <p>Timing: 2 minutes pour cette analogie historique qui permet de saisir l'importance du MCP.</p>
+        </aside>
         </section>
 
         <section>
           <h2>Les prompts: le secret d'un outil MCP réussi</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🧠 Ce qu'ils font:</h3>
@@ -549,13 +581,13 @@
               </ul>
             </div>
           </div>
-          
+
           <p class="fragment"><strong>Sans bons prompts, même l'outil le plus utile sera ignoré par l'IA!</strong></p>
-          
+
           <aside class="notes">
             <h3>Le rôle crucial des prompts - expliqué avec une analogie</h3>
             <p>Utiliser cette métaphore pour clarifier leur importance:</p>
-            
+
             <ul>
               <li>Les prompts sont à l'IA ce que les panneaux de signalisation sont aux conducteurs:
                 <ul>
@@ -565,7 +597,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h3>Exemple concret: le graphe de connaissances</h3>
             <p>Illustrer avec un cas réel:</p>
             <ul>
@@ -584,7 +616,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <p>Point crucial à souligner: Sans prompts bien conçus, l'outil peut être parfaitement fonctionnel mais jamais utilisé - l'IA ne saura pas quand et comment y faire appel.</p>
             <p>Timing: 2 minutes pour cette explication incluant l'exemple concret.</p>
           </aside>
@@ -598,7 +630,7 @@
 
         <section>
           <h2>MCP aujourd'hui: déjà une réalité</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🚀 Adoption rapide:</h3>
@@ -617,16 +649,16 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="fragment">
             <h3>⚠️ Le moment critique: être présent dès maintenant</h3>
             <p>Les premiers à maîtriser MCP créeront les outils qui deviendront incontournables</p>
           </div>
-          
+
           <aside class="notes">
             <h3>L'état actuel de MCP - avec exemples concrets</h3>
             <p>Présenter MCP comme une réalité actuelle, pas un concept futur:</p>
-            
+
             <h4>Le momentum impressionnant</h4>
             <ul>
               <li>Standard adopté à une vitesse record:
@@ -638,7 +670,7 @@
               </li>
               <li>Cette adoption universelle est exceptionnelle dans l'histoire des standards!</li>
             </ul>
-            
+
             <h4>Exemples concrets d'utilisation actuelle</h4>
             <p>Montrer des cas réels pour crédibiliser:</p>
             <ul>
@@ -656,7 +688,7 @@
               </li>
               <li><strong>Systèmes internes</strong>: Bases de connaissances, CI/CD, BDD</li>
             </ul>
-            
+
             <p>Message d'urgence à faire passer: Nous sommes au début d'une vague - les premiers à déployer des outils MCP efficaces auront un avantage concurrentiel substantiel.</p>
             <p>Timing: 2 minutes pour cette présentation de l'état actuel de MCP.</p>
           </aside>
@@ -664,7 +696,7 @@
 
         <section>
           <h2>Comment démarrer concrètement avec MCP</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🏁 Plan d'action en 4 étapes:</h3>
@@ -685,13 +717,13 @@
               </ul>
             </div>
           </div>
-          
+
           <p class="fragment"><strong>Bonne nouvelle: MCP coexiste parfaitement avec vos API REST actuelles!</strong></p>
-          
+
           <aside class="notes">
             <h3>Guide pratique pour démarrer - avec exemples concrets</h3>
             <p>Donner des conseils actionnables immédiatement:</p>
-            
+
             <h4>Comment choisir votre premier projet MCP</h4>
             <ul>
               <li><strong>Critères de sélection</strong>:
@@ -709,7 +741,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Approche de développement recommandée</h4>
             <ul>
               <li><strong>Commencer petit</strong> - un seul serveur MCP avec 2-3 fonctions bien conçues</li>
@@ -717,14 +749,14 @@
               <li><strong>Cycle court</strong>: Prototype → Test → Mesure → Amélioration</li>
               <li><strong>Focus sur les prompts</strong>: Ils sont souvent négligés mais cruciaux pour l'adoption</li>
             </ul>
-            
+
             <h4>Erreurs courantes à éviter</h4>
             <ul>
               <li>Trop de fonctions confuses (mieux vaut 3 claires que 20 vagues)</li>
               <li>Descriptions trop techniques (pensez à comment une IA interprète votre outil)</li>
               <li>Oublier de mesurer l'utilisation réelle de vos outils MCP</li>
             </ul>
-            
+
             <p>Message à faire passer: Le MCP n'est pas une technologie de remplacement - c'est une couche d'adaptation pour rendre vos systèmes actuels accessibles aux agents IA.</p>
             <p>Timing: 3 minutes pour cette section orientée action.</p>
           </aside>
@@ -737,7 +769,7 @@
 
         <section>
           <h2>La feuille de route du MCP</h2>
-          
+
           <div class="split-layout">
             <div class="split-left">
               <h3>🔮 Prochaines évolutions:</h3>
@@ -758,7 +790,7 @@
               </ul>
             </div>
           </div>
-          
+
           <div class="fragment">
             <h3>Phase actuelle: Construction (II/III)</h3>
             <div style="display: flex; justify-content: space-between; margin-top: 10px;">
@@ -776,11 +808,11 @@
               </div>
             </div>
           </div>
-          
+
           <aside class="notes">
             <h3>La roadmap du MCP et ses défis - vision structurée</h3>
             <p>Présenter l'évolution en termes de phases claires:</p>
-            
+
             <h4>Évolutions imminentes (12-18 mois)</h4>
             <ul>
               <li><strong>Notifications asynchrones</strong>: Permettra aux agents de gérer des tâches de longue durée
@@ -796,7 +828,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Défis à résoudre - avec nuances</h4>
             <ul>
               <li><strong>Sécurité</strong>: MCP lui-même ne spécifie pas les mécanismes d'authentification
@@ -812,14 +844,14 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Cycle d'Évolution - où nous en sommes</h4>
             <ul>
               <li><strong>Phase I (Genèse)</strong>: Définition du standard, preuves de concept → TERMINÉE</li>
               <li><strong>Phase II (Construction)</strong>: Déploiements réels, premières intégrations → ACTUEL</li>
               <li><strong>Phase III (Écosystème)</strong>: Web d'outils MCP interconnectés → FUTUR (2-3 ans)</li>
             </ul>
-            
+
             <p>Message clé: Nous sommes actuellement à un moment critique - assez matures pour des déploiements réels, mais encore assez tôt pour influencer l'écosystème.</p>
             <p>Timing: 3 minutes pour cette vision prospective.</p>
           </aside>
@@ -832,7 +864,7 @@
 
         <section>
           <h2>Le défi de la mémoire collective</h2>
-          
+
           <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
             <div style="width: 30%; text-align: center;">
               <h3>🧠 Aujourd'hui</h3>
@@ -885,7 +917,7 @@
             </div>
           </div>
         </section>
-          
+
         <section>
           <h2>Le défi de la mémoire collective</h2>
           <div class="fragment">
@@ -897,11 +929,11 @@
               <li>Les nouveaux membres bénéficient immédiatement du <strong>savoir collectif</strong></li>
             </ul>
           </div>
-          
+
           <aside class="notes">
             <h3>Le problème de mémoire des IA - illustré concrètement</h3>
             <p>Présenter ce problème avec une analogie puissante:</p>
-            
+
             <ul>
               <li>Imaginez une équipe où chaque personne perd la mémoire chaque soir:
                 <ul>
@@ -918,7 +950,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h3>La solution MCP expliquée</h3>
             <ul>
               <li><strong>Architecture</strong>: Un serveur MCP exposant un graphe de connaissances
@@ -935,7 +967,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h3>L'importance des prompts MCP ici</h3>
             <p>Exemple concret qui illustre la valeur des prompts:</p>
             <ul>
@@ -954,7 +986,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <p>Timing: 3 minutes pour cet exemple concret et parlant.</p>
           </aside>
         </section>
@@ -966,7 +998,7 @@
 
         <section>
           <h2>La troisième vague de la révolution numérique</h2>
-          
+
           <div style="display: flex; justify-content: space-between; margin: 30px 0;">
             <div style="width: 30%; text-align: center;">
               <div style="background: #f5f5f5; padding: 15px; border-radius: 10px; height: 300px;">
@@ -993,11 +1025,11 @@
               </div>
             </div>
           </div>
-          <h2 class="fragment"><strong>MCP sera aux agents IA ce que les API REST ont été au Web</strong></h2>
+          <h2 class="fragment"><<strong>MCP sera aux agents IA ce que les API REST ont été au Web</strong></h2>
           <aside class="notes">
             <h3>La perspective historique - donner du sens à MCP</h3>
             <p>Utiliser cette vision par vagues pour montrer l'importance du moment actuel:</p>
-            
+
             <h4>Les trois révolutions numériques</h4>
             <ul>
               <li><strong>Vague 1 - Web (1990-2010)</strong>:
@@ -1022,7 +1054,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Le parallèle historique clé</h4>
             <p>Insister sur ce point essentiel:</p>
             <ul>
@@ -1039,7 +1071,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <p>Message final: Ceux qui ont saisi l'importance des API REST au début des années 2000 ont pris une avance considérable. La même opportunité se présente aujourd'hui avec MCP.</p>
             <p>Timing: 2 minutes pour cette mise en perspective historique.</p>
           </aside>
@@ -1047,7 +1079,7 @@
 
         <section>
           <h2>3 clés pour réussir avec MCP</h2>
-          
+
           <div style="display: flex; justify-content: space-between; margin: 20px 0;">
             <div style="width: 30%; text-align: center;">
               <div style="background: #00AEC7; color: white; padding: 15px; border-radius: 10px; height: 400px;">
@@ -1077,11 +1109,11 @@
               </div>
             </div>
           </div>
-          
+
           <aside class="notes">
             <h3>Les trois points clés à retenir - format direct</h3>
             <p>Présenter ces trois takeaways comme les clés de la réussite avec MCP:</p>
-            
+
             <h4>Clé #1: MCP = Le standard essentiel</h4>
             <ul>
               <li>Ce n'est pas juste un autre protocole technique</li>
@@ -1089,7 +1121,7 @@
               <li>Adopté massivement par tous les grands acteurs (Anthropic, OpenAI, Google...)</li>
               <li>Message d'action: Commencez à l'intégrer dans votre réflexion stratégique dès maintenant</li>
             </ul>
-            
+
             <h4>Clé #2: L'affordance pour IA est différente</h4>
             <ul>
               <li>Nouveau paradigme: concevoir pour un utilisateur IA, pas humain</li>
@@ -1097,7 +1129,7 @@
               <li>L'affordance pour IA est textuelle et contextuelle</li>
               <li>Les prompts MCP sont cruciaux - ils sont le véritable guide d'utilisation</li>
             </ul>
-            
+
             <h4>Clé #3: Cadre d'évaluation des 3U</h4>
             <ul>
               <li><strong>Useful</strong>: Résout un vrai problème (le "quoi")</li>
@@ -1105,15 +1137,15 @@
               <li><strong>Used</strong>: Effectivement choisi par l'IA parmi les options disponibles (le "est-ce que")</li>
               <li>Ce dernier point est le plus souvent négligé mais essentiel - un outil peut être utile et utilisable mais jamais choisi!</li>
             </ul>
-            
+
             <p>Conseil d'action: Commencez avec un cas d'usage simple mais à fort impact - une interface en langage naturel vers vos données ou systèmes les plus utilisés.</p>
             <p>Timing: 3 minutes pour ces trois clés essentielles qui résument l'ensemble de la présentation.</p>
           </aside>
         </section>
-        
+
         <section>
           <h2>L'enjeu de pouvoir que personne ne voit venir</h2>
-          
+
           <div style="display: flex; margin: 30px 0;">
             <div style="width: 65%; padding-right: 20px;">
               <div style="background: #f5f5f5; padding: 20px; border-radius: 10px; height: 420px;">
@@ -1150,11 +1182,11 @@
               </div>
             </div>
           </div>
-          
+
           <aside class="notes">
             <h3>L'enjeu caché de pouvoir - perspective économique et éthique</h3>
             <p>Attirer l'attention sur cette dimension souvent négligée:</p>
-            
+
             <h4>Un parallèle historique instructif</h4>
             <ul>
               <li>Rappel du précédent: Google et le référencement
@@ -1170,7 +1202,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Questions stratégiques</h4>
             <ul>
               <li><strong>Pour les entreprises</strong>:
@@ -1187,51 +1219,50 @@
                 </ul>
               </li>
             </ul>
-            
+
             <p>Message à faire passer: Anticiper cet enjeu dès maintenant en positionnant vos outils de manière stratégique dans l'écosystème MCP naissant.</p>
             <p>Timing: 2 minutes pour cette mise en perspective économique et stratégique.</p>
           </aside>
         </section>
-        
+
         <section>
           <h2>Votre plan d'action</h2>
-          
-          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin: 20px 0;">
-            <div style="width: 48%; margin-bottom: 15px; background: #f5f5f5; padding: 15px; border-radius: 10px;">
-              <h3 style="margin-top: 0;">📋 À court terme (1-3 mois)</h3>
-              <ul style="font-size: 0.9em;">
-                <li>Former vos équipes aux concepts MCP</li>
-                <li>Identifier 1-2 cas d'usage à fort impact</li>
-                <li>Créer un prototype simple de serveur MCP</li>
-              </ul>
-            </div>
-            <div style="width: 48%; margin-bottom: 15px; background: #f5f5f5; padding: 15px; border-radius: 10px;">
-              <h3 style="margin-top: 0;">🔍 À moyen terme (3-6 mois)</h3>
-              <ul style="font-size: 0.9em;">
-                <li>Déployer un premier outil MCP en production</li>
-                <li>Créer des prompts MCP efficaces</li>
-                <li>Établir des guidelines d'affordance pour IA</li>
-              </ul>
-            </div>
-            <div style="width: 48%; background: #f5f5f5; padding: 15px; border-radius: 10px;">
-              <h3 style="margin-top: 0;">🚀 À long terme (6-12 mois)</h3>
-              <ul style="font-size: 0.9em;">
-                <li>Développer une stratégie MCP d'entreprise</li>
-                <li>Créer un écosystème d'outils interopérables</li>
-                <li>Explorer les notifications asynchrones</li>
-              </ul>
-            </div>
-            <div style="width: 48%; background: #00AEC7; color: white; padding: 15px; border-radius: 10px;">
-              <h3 style="margin-top: 0;">⭐ Le conseil clé</h3>
-              <p style="margin-bottom: 5px;">Commencez petit, mesurez l'usage, et itérez rapidement!</p>
-              <p>Un seul outil MCP bien conçu vaut mieux que dix outils négligés.</p>
-            </div>
-          </div>
-          
+
+          <div class="flex-container">
+  <div class="fragment flex-item">
+    <h3>📋 À court terme (1-3 mois)</h3>
+    <ul>
+      <li>Former vos équipes aux concepts MCP</li>
+      <li>Identifier 1-2 cas d'usage à fort impact</li>
+      <li>Créer un prototype simple de serveur MCP</li>
+    </ul>
+  </div>
+  <div class="fragment flex-item">
+    <h3>🔍 À moyen terme (3-6 mois)</h3>
+    <ul>
+      <li>Déployer un premier outil MCP en production</li>
+      <li>Créer des prompts MCP efficaces</li>
+      <li>Établir des guidelines d'affordance pour IA</li>
+    </ul>
+  </div>
+  <div class="fragment flex-item">
+    <h3>🚀 À long terme (6-12 mois)</h3>
+    <ul>
+      <li>Développer une stratégie MCP d'entreprise</li>
+      <li>Créer un écosystème d'outils interopérables</li>
+      <li>Explorer les notifications asynchrones</li>
+    </ul>
+  </div>
+  <div class="fragment flex-item conseil">
+    <h3>⭐ Le conseil clé</h3>
+    <p>Commencez petit, mesurez l'usage, et itérez rapidement!</p>
+    <p>Un seul outil MCP bien conçu vaut mieux que dix outils négligés.</p>
+  </div>
+</div>
           <aside class="notes">
             <h3>Plan d'action concret - par horizon temporel</h3>
             <p>Fournir une feuille de route actionnelle pour mettre en œuvre MCP:</p>
-            
+
             <h4>Actions immédiates (1-3 mois)</h4>
             <ul>
               <li><strong>Formation</strong>: Sensibiliser vos équipes tech aux concepts et potentiel de MCP
@@ -1247,7 +1278,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Actions à moyen terme (3-6 mois)</h4>
             <ul>
               <li><strong>Implémentation</strong>: Créer votre premier outil MCP opérationnel
@@ -1263,7 +1294,7 @@
                 </ul>
               </li>
             </ul>
-            
+
             <h4>Vision à long terme (6-12 mois)</h4>
             <ul>
               <li><strong>Stratégie</strong>: Intégrer MCP dans votre architecture d'entreprise
@@ -1279,19 +1310,18 @@
                 </ul>
               </li>
             </ul>
-            
+
             <p>Message final à faire passer: L'important est de commencer maintenant, même modestement - l'expertise se construit en faisant.</p>
             <p>Timing: 2 minutes pour ce plan d'action final qui donne des étapes concrètes.</p>
           </aside>
         </section>
-        
+
         <section>
           <h2>Merci! Des questions?</h2>
           <p>Pour continuer la conversation:</p>
           <ul>
             <li>Documentation officielle: <a href="https://blog.anthropic.com/introducing-model-context-protocol">MCP @ Anthropic</a></li>
-            <li>Ressources: <a href="https://github.com/anthropics/anthropic-cookbook">Cookbook GitHub</a></li>
-            <li>Exemples de code: <a href="https://cookbook.anthropic.com/">Documentation Claude</a></li>
+            <li>@owulveryck sur Bluesky et olivier.wulveryck sur LinkedIn</li>
           </ul>
           <p style="margin-top: 30px;"><em>Le futur des interactions IA-outils est en train de s'écrire maintenant...</em></p>
         </section>
