@@ -90,165 +90,301 @@
           </aside>
         </section>
 
-        <!-- Summary Slide -->
-        <section>
-          <h2>De l'IA Conversationnelle aux Agents qui Agissent</h2>
-          <div class="split-layout">
-            <div class="split-left">
-              <ol>
-                <li>Pourquoi les agents IA sont limités aujourd'hui</li>
-                <li>MCP: le standard qui change tout</li>
-                <li>Les 3U: conception d'outils pour l'IA</li>
-                <li>Cas pratiques et prochaines étapes</li>
-              </ol>
-            </div>
-            <div class="split-right">
-              <img src="coorp/images/environnement.png" alt="Illustration d'environnements d'agents" height="200">
-            </div>
-          </div>
-          <aside class="notes">
-            <h3>Structure dynamique de la présentation</h3>
-            <p>Notre voyage aujourd'hui suit un arc narratif en quatre temps:</p>
-            <ol>
-              <li><strong>Le problème</strong> - Pourquoi les agents IA actuels sont limités dans leur capacité d'action et d'autonomie (3 minutes)</li>
-              <li><strong>La solution</strong> - Comment le protocole MCP ouvre un nouvel horizon en permettant une communication standardisée entre IA et outils (5 minutes)</li>
-              <li><strong>La méthode</strong> - Les 3U essentiels pour concevoir des outils vraiment efficaces pour l'IA (5 minutes)</li>
-              <li><strong>L'application</strong> - Exemples concrets d'utilisation et vision pour l'avenir (7 minutes)</li>
-            </ol>
-            <p>Ce format nous permet de maintenir un rythme soutenu tout en couvrant tous les aspects essentiels du MCP et de son impact.</p>
-            <p>Timing: 3 minutes pour ce cadrage qui présente clairement la structure.</p>
-          </aside>
-        </section>
-
-        <!-- Section 1: Contexte et fondamentaux -->
+        <!-- Section sur la compréhension des LLMs -->
         <section data-background="#00AEC7">
-          <h1>Le problème: Des IA prisonnières de leur fenêtre de chat</h1>
+          <h1>Comprendre les LLMs: Le Langage est la clé</h1>
         </section>
 
         <section>
-          <h2>Qu'est-ce qu'un véritable agent IA?</h2>
+          <h2>L'importance du "L" dans LLM</h2>
           <div class="split-layout">
             <div class="split-left">
               <ul>
-                <li>Un <strong>agent</strong> perçoit ET modifie son <strong>environnement</strong></li>
-                <li>Sans capacité d'action, une IA n'est qu'un <strong>conversationaliste</strong></li>
-                <li>L'<strong>autonomie</strong> = capacité à agir sans intervention humaine</li>
-                <li class="fragment"><em>"Un assistant qui ne peut rien faire est juste un bavard"</em></li>
+                <li><strong>L</strong>arge <strong>L</strong>anguage <strong>M</strong>odel</li>
+                <li>Le <strong>langage</strong> est l'interface naturelle entre humains</li>
+                <li>Les LLMs comprennent et génèrent du <strong>texte comme un humain</strong></li>
+                <li class="fragment">Nous passons de la <strong>programmation</strong> à la <strong>conversation</strong></li>
               </ul>
             </div>
             <div class="split-right">
-              <!-- PLACEHOLDER: Image montrant un agent IA au centre, connecté à différents environnements/systèmes (base de données, web, applications, etc.) avec des flèches bidirectionnelles -->
-              <p><em>[Agent IA interagissant avec divers environnements]</em></p>
+              <h3>Transformation fondamentale:</h3>
+              <ul>
+                <li>Code → Texte</li>
+                <li>Requêtes → Questions</li>
+                <li>Inputs/Outputs → Dialogues</li>
+                <li>API → Conversation</li>
+              </ul>
             </div>
           </div>
           <aside class="notes">
-            <h3>Concepts fondamentaux des agents - approche dynamique</h3>
-            <p>Commençons par clarifier ce qu'est véritablement un agent IA, car c'est la base de toute notre discussion:</p>
-
-            <h4>La distinction clé:</h4>
+            <h3>L'importance du langage naturel</h3>
+            <p>Points clés à souligner:</p>
             <ul>
-              <li>Un simple <strong>modèle de langage</strong> génère du texte</li>
-              <li>Un <strong>assistant</strong> aide à répondre à des questions</li>
-              <li>Un véritable <strong>agent</strong> AGIT sur le monde qui l'entoure</li>
+              <li>Le "L" de LLM représente "Language" - c'est la caractéristique fondamentale</li>
+              <li>Avant: interfaces spécialisées (code, APIs, requêtes SQL)</li>
+              <li>Maintenant: langage naturel - l'interface universelle</li>
+              <li>Démocratisation de l'accès à la technologie - n'importe qui peut "parler" à l'IA</li>
             </ul>
-
-            <h4>Points essentiels:</h4>
-            <ul>
-              <li>Un agent doit non seulement percevoir son environnement (lire, écouter), mais aussi pouvoir le modifier (écrire, exécuter des actions)</li>
-              <li>Sans cette capacité d'action, une IA reste un simple "bavard intelligent"</li>
-              <li>L'autonomie est un spectre: du très guidé (comme les assistants actuels) au totalement autonome (agents futuristes)</li>
-            </ul>
-
-            <p>Insister sur cette métaphore du "bavard vs acteur" pour ancrer la différence fondamentale.</p>
-            <p>Timing: 1 minute pour cette introduction conceptuelle directe.</p>
+            <p>Analogie: C'est comme passer d'un logiciel où il faut lire le manuel à un assistant humain à qui on peut simplement parler.</p>
+            <p>Timing: 2 minutes pour expliquer ce changement fondamental.</p>
           </aside>
         </section>
 
         <section>
-          <h2>Le problème: Des IA en cage</h2>
+          <h2>Moteur d'inférence: le cerveau du LLM</h2>
           <div class="split-layout">
             <div class="split-left">
+              <h3>Comment fonctionne un LLM:</h3>
               <ul>
-                <li>ChatGPT, Claude, Gemini = <strong>prisonniers</strong> de leur interface texte</li>
-                <li><strong>Écart de capacité</strong>: un humain navigue entre applications, fichiers, web...</li>
-                <li>Les IA actuelles sont comme des <strong>experts enfermés</strong> dans une pièce sans bras ni jambes</li>
-                <li class="fragment"><strong>Comment libérer ce potentiel?</strong></li>
+                <li>L'<strong>inférence</strong> est le processus de génération de réponses</li>
+                <li>Prédiction du <strong>mot suivant le plus probable</strong></li>
+                <li>Basé sur les <strong>milliards de paramètres</strong> appris</li>
+                <li class="fragment">Les performances dépendent de la <strong>taille du modèle</strong> et de sa <strong>qualité d'entraînement</strong></li>
               </ul>
             </div>
             <div class="split-right">
-              <img src="coorp/images/environnement.png" alt="Illustration d'environnements d'agents" height="250">
+              <pre><code class="text" data-trim>
+Utilisateur: Quel est la capitale de la France?
+Moteur d'inférence: [calcule la probabilité des mots suivants]
+"La" (5%)
+"capitale" (12%)
+"de" (8%)
+"la" (11%)
+"France" (20%)
+"est" (95%)
+"Paris" (99%)
+              </code></pre>
             </div>
           </div>
           <aside class="notes">
-            <h3>La métaphore de la cage dorée</h3>
-            <p>Utiliser cette image forte pour faire comprendre la situation actuelle:</p>
-
+            <h3>Le processus d'inférence expliqué simplement</h3>
+            <p>Utiliser cette métaphore accessible:</p>
             <ul>
-              <li>Les IA modernes comme ChatGPT, Claude ou Gemini sont incroyablement intelligentes... mais cantonnées à une simple interface texte</li>
-              <li>C'est comme avoir un expert de classe mondiale enfermé dans une pièce, capable de donner des conseils brillants mais incapable d'agir directement</li>
-              <li>Pendant ce temps, nous (humains) naviguons librement entre applications, fichiers, web, emails, etc.</li>
+              <li>Un LLM fonctionne comme un "compléteur de phrases" ultra-sophistiqué</li>
+              <li>Il lit le texte précédent et prédit "Quel est le mot qui devrait suivre?"</li>
+              <li>Cette prédiction se base sur tous les textes qu'il a "lus" pendant son entraînement</li>
+              <li>Le moteur d'inférence est le composant qui exécute ces calculs en temps réel</li>
             </ul>
 
-            <h3>L'analogie visuelle</h3>
-            <p>Expliquer visuellement:</p>
+            <h3>Points techniques à mentionner brièvement:</h3>
             <ul>
-              <li>Nous donnons des <strong>yeux</strong> aux IA (ils peuvent lire ce que nous leur montrons)</li>
-              <li>Nous leur donnons une <strong>voix</strong> (ils peuvent nous répondre)</li>
-              <li>Mais nous ne leur donnons pas de <strong>mains</strong> (ils ne peuvent pas agir par eux-mêmes)</li>
+              <li>Le calcul est effectué sur des GPU spécialisés</li>
+              <li>Chaque "token" (mot ou partie de mot) est prédit l'un après l'autre</li>
+              <li>La cohérence des réponses vient de la capacité du modèle à maintenir le contexte</li>
             </ul>
-
-            <p>Insister sur cette frustration: imaginez avoir toute la connaissance du monde mais être incapable d'effectuer la moindre action!</p>
-            <p>Timing: 1 minute pour exposer clairement ce problème fondamental.</p>
+            
+            <p>Timing: 2 minutes pour cette explication accessible de l'inférence.</p>
           </aside>
         </section>
 
         <section>
-          <h2>Le problème de traduction</h2>
+          <h2>Context Window: la mémoire temporaire du LLM</h2>
           <div class="split-layout">
             <div class="split-left">
-              <h3>Barrière de communication:</h3>
               <ul>
-                <li>L'IA parle <strong>langage naturel</strong></li>
-                <li>Les outils attendent du <strong>JSON structuré</strong></li>
-                <li>Besoin d'un <strong>interprète universel</strong></li>
+                <li>Espace "mémoire" pour la conversation en cours</li>
+                <li>Limitée en taille (4K-128K tokens selon modèles)</li>
+                <li>Tout ce qui est <strong>hors context window est oublié</strong></li>
+                <li class="fragment">Impact direct sur la <strong>pertinence</strong> des réponses</li>
               </ul>
             </div>
             <div class="split-right">
-              <h3>Vision idéale:</h3>
-              <ul>
-                <li><strong>Découplage</strong> agent/outil</li>
-                <li><strong>Interopérabilité</strong> universelle</li>
-                <li><strong>Web d'outils</strong> pour IA</li>
-              </ul>
-              <p class="fragment"><strong>Il nous faut un standard!</strong></p>
+              <div style="background: #f5f5f5; padding: 15px; border-radius: 10px;">
+                <h3>Analogie:</h3>
+                <p>La context window est comme...</p>
+                <ul>
+                  <li>La mémoire à court terme humaine</li>
+                  <li>Une page blanche limitée</li>
+                  <li>Un tableau qui s'efface quand il est plein</li>
+                </ul>
+              </div>
             </div>
           </div>
           <aside class="notes">
-            <h3>La métaphore de la traduction</h3>
-            <p>Utiliser l'analogie linguistique pour illustrer le défi:</p>
-
+            <h3>La context window expliquée avec une analogie</h3>
+            <p>Utiliser cette comparaison pour clarifier:</p>
             <ul>
-              <li>Les IA sont comme des personnes qui parlent uniquement français</li>
-              <li>Les outils numériques sont comme des personnes qui parlent uniquement chinois</li>
-              <li>Comment les faire communiquer efficacement?</li>
+              <li>La context window est comme une conversation à une soirée:</li>
+              <li>Vous pouvez vous rappeler ce qui a été dit récemment (dans la fenêtre)</li>
+              <li>Mais vous oubliez ce qui a été dit il y a longtemps (hors de la fenêtre)</li>
             </ul>
 
-            <h3>Les approches actuelles et leurs limites</h3>
+            <h3>Implications pratiques:</h3>
             <ul>
-              <li><strong>Solution bricolée</strong>: Chaque outil fournit son propre "traducteur" (SDK) → Fragmentation, inefficacité</li>
-              <li><strong>Couplage fort</strong>: L'IA doit apprendre à utiliser spécifiquement CHAQUE outil → Complexité, maintenance</li>
+              <li>L'IA ne "se souvient" que de ce qui est dans sa context window actuelle</li>
+              <li>Plus la fenêtre est grande, plus l'IA peut considérer d'informations à la fois</li>
+              <li>C'est pourquoi les grands modèles (32K ou 128K) peuvent traiter des documents entiers</li>
+              <li>C'est aussi pourquoi les IA "oublient" des détails mentionnés tôt dans une longue conversation</li>
             </ul>
 
-            <h3>La vision idéale</h3>
-            <p>Ce qu'il nous faut, c'est un "esperanto numérique" - un langage standard que:</p>
+            <p>Point crucial: Contrairement aux humains, le LLM n'a pas de mémoire à long terme native!</p>
+            <p>Timing: 2 minutes pour cette explication de la context window.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Caractéristique fondamentale: LLMs sont Stateless</h2>
+          <div class="split-layout">
+            <div class="split-left">
+              <h3>Qu'est-ce que "stateless"?</h3>
+              <ul>
+                <li>Pas de <strong>mémoire persistante</strong> entre les appels</li>
+                <li>Tout contexte doit être <strong>explicitement fourni</strong></li>
+                <li>Comme une personne avec <strong>amnésie</strong> à court terme</li>
+                <li class="fragment">Grande limitation pour les <strong>agents autonomes</strong></li>
+              </ul>
+            </div>
+            <div class="split-right">
+              <pre><code class="text" data-trim>
+Appel 1:
+Utilisateur: "Mon nom est Olivier"
+LLM: "Bonjour Olivier!"
+
+Appel 2 (nouveau contexte):
+Utilisateur: "Quel est mon nom?"
+LLM: "Je ne connais pas votre nom,
+      vous ne me l'avez pas dit."
+              </code></pre>
+            </div>
+          </div>
+          <aside class="notes">
+            <h3>L'absence d'état expliquée simplement</h3>
+            <p>Utiliser cette analogie parlante:</p>
             <ul>
-              <li>Toutes les IA peuvent comprendre naturellement</li>
-              <li>Tous les outils peuvent facilement implémenter</li>
-              <li>Qui permet une découverte et utilisation dynamique</li>
+              <li>Un LLM est comme un interlocuteur qui a une excellente compréhension et mémoire à court terme...</li>
+              <li>...mais qui "redémarre" complètement entre deux conversations</li>
+              <li>Comme dans le film "Memento" - chaque interaction démarre sans souvenir des précédentes</li>
             </ul>
 
-            <p>Cette approche créerait un véritable "web d'outils" pour l'IA, similaire à ce que le web a fait pour l'information humaine.</p>
-            <p>Timing: 1 minute pour présenter clairement ce défi de communication.</p>
+            <h3>Implications concrètes:</h3>
+            <ul>
+              <li>Les applications doivent gérer l'historique et le contexte elles-mêmes</li>
+              <li>Il faut "rappeler" au LLM toutes les informations importantes à chaque appel</li>
+              <li>Cette caractéristique rend difficile la création d'agents vraiment autonomes</li>
+              <li>C'est pourquoi les applications comme ChatGPT doivent maintenir l'historique de conversation</li>
+            </ul>
+
+            <p>Point crucial: Cette nature "stateless" est à la fois une force (sécurité, prévisibilité) et une faiblesse (manque d'autonomie).</p>
+            <p>Timing: 2 minutes pour cette explication de la nature stateless.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>La puissance des fonctions avec les LLMs</h2>
+          <div class="split-layout">
+            <div class="split-left">
+              <ul>
+                <li>Les fonctions permettent au LLM <strong>d'agir</strong> sur le monde</li>
+                <li>Le LLM <strong>génère du JSON</strong> pour appeler une fonction</li>
+                <li>Le serveur <strong>exécute</strong> et renvoie le résultat</li>
+                <li class="fragment">C'est ce qui transforme un <strong>modèle</strong> en <strong>agent</strong></li>
+              </ul>
+            </div>
+            <div class="split-right">
+              <pre><code class="json" data-trim>
+// Définition de la fonction
+{
+  "name": "get_weather",
+  "description": "Obtenir la météo",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "description": "La ville"
+    }
+  }
+}
+
+// Appel par le LLM
+{
+  "name": "get_weather",
+  "arguments": {
+    "location": "Paris"
+  }
+}
+              </code></pre>
+            </div>
+          </div>
+          <aside class="notes">
+            <h3>Le concept de fonction expliqué</h3>
+            <p>Points clés à couvrir:</p>
+            <ul>
+              <li>Une "fonction" pour un LLM est une capacité qui lui est donnée d'interagir avec le monde extérieur</li>
+              <li>Le processus se déroule en 4 étapes:</li>
+              <ol>
+                <li>On décrit la fonction au LLM (nom, description, paramètres attendus)</li>
+                <li>Quand l'utilisateur demande quelque chose qui nécessite cette fonction, le LLM génère un appel structuré en JSON</li>
+                <li>Le système intercepte cet appel, exécute réellement la fonction</li>
+                <li>Le résultat est renvoyé au LLM qui peut poursuivre sa réponse</li>
+              </ol>
+            </ul>
+
+            <h3>L'analogie de la délégation</h3>
+            <ul>
+              <li>C'est comme avoir un assistant très intelligent mais qui ne peut pas quitter son bureau</li>
+              <li>Les fonctions sont comme des "coursiers" qui vont chercher des informations ou effectuer des actions pour lui</li>
+              <li>L'assistant (LLM) doit remplir un formulaire standardisé pour faire appel à ces coursiers</li>
+            </ul>
+
+            <p>Point crucial: C'est cette capacité qui permet de passer d'un simple "conversationaliste" à un véritable agent capable d'actions.</p>
+            <p>Timing: 3 minutes pour cette explication des fonctions.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Le défi de l'intégration des fonctions</h2>
+          <div class="split-layout">
+            <div class="split-left">
+              <h3>Problèmes actuels:</h3>
+              <ul>
+                <li>Nécessite de <strong>modifier le serveur d'inférence</strong></li>
+                <li><strong>Couplage fort</strong> entre LLM et fonctions</li>
+                <li>Difficulté pour <strong>ajouter</strong> de nouvelles capacités</li>
+                <li class="fragment">Besoin d'une approche <strong>standardisée</strong></li>
+              </ul>
+            </div>
+            <div class="split-right">
+              <h3>Solutions:</h3>
+              <ul>
+                <li><strong>Plugins/Add-ons</strong>: Architecture extensible</li>
+                <li><strong>API standardisées</strong>: Découplage</li>
+                <li><strong>MCP</strong>: Protocole universel</li>
+                <li class="fragment">Passage de <strong>l'intégration</strong> à <strong>l'interopérabilité</strong></li>
+              </ul>
+            </div>
+          </div>
+          <p class="fragment"><strong>Et c'est exactement ce que résout le Model Context Protocol (MCP)!</strong></p>
+          <aside class="notes">
+            <h3>Le problème d'extensibilité</h3>
+            <p>Expliquer le défi technique:</p>
+            <ul>
+              <li>Pour ajouter des fonctions à un LLM, il faut traditionnellement:</li>
+              <ol>
+                <li>Modifier le serveur d'inférence lui-même</li>
+                <li>Intégrer directement le code des fonctions au système</li>
+                <li>Redéployer l'ensemble à chaque ajout de fonction</li>
+              </ol>
+              <li>Cela crée plusieurs problèmes:</li>
+              <ul>
+                <li>Couplage fort entre l'IA et les outils</li>
+                <li>Complexité opérationnelle</li>
+                <li>Difficultés de maintenance</li>
+                <li>Impossibilité pour les utilisateurs d'étendre facilement les capacités</li>
+              </ul>
+            </ul>
+
+            <h3>La transition vers les solutions extensibles</h3>
+            <ul>
+              <li>Les premiers modèles ont tenté de résoudre ce problème avec des systèmes de plugins:</li>
+              <ul>
+                <li>ChatGPT Plugins (maintenant GPTs)</li>
+                <li>Claude avec Canvas</li>
+                <li>Différentes approches propriétaires</li>
+              </ul>
+              <li>Mais ces approches manquent de standardisation et d'interopérabilité</li>
+            </ul>
+
+            <p>Point de transition: C'est précisément ce problème que le MCP vient résoudre - créer un standard universel pour connecter n'importe quel LLM à n'importe quel outil.</p>
+            <p>Timing: 2 minutes pour cette explication du défi d'intégration.</p>
           </aside>
         </section>
 
