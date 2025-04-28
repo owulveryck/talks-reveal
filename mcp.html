@@ -47,13 +47,13 @@
           <p><em>Standardiser l'interaction entre IA et Outils</em></p>
           <p class="fragment">Les <strong>3U</strong> : <em>Useful, Usable, Used</em></p>
           <aside class="notes">
-            Bienvenue à cette présentation sur le Model Context Protocol, ou MCP.
-            
-            Aujourd'hui, nous allons explorer comment ce protocole révolutionne l'interaction entre l'IA et les outils numériques.
-            
-            Le MCP est bien plus qu'un simple standard technique - il représente une nouvelle façon de concevoir la relation entre les agents IA et leur environnement.
-            
-            Au cœur de cette présentation, nous allons découvrir les "3U" du MCP : comment créer des outils qui sont vraiment Utiles (Useful), facilement Utilisables (Usable) et effectivement Utilisés (Used) par les systèmes d'IA.
+            <h3>Introduction au MCP</h3>
+            <ul>
+              <li>Bienvenue à cette présentation sur le <strong>Model Context Protocol</strong>, ou MCP.</li>
+              <li>Aujourd'hui, nous allons explorer comment ce protocole révolutionne l'interaction entre l'IA et les outils numériques.</li>
+              <li>Le MCP est bien plus qu'un simple standard technique - il représente une nouvelle façon de concevoir la relation entre les agents IA et leur environnement.</li>
+              <li>Au cœur de cette présentation, nous allons découvrir les "<strong>3U</strong>" du MCP : comment créer des outils qui sont vraiment <em>Utiles</em> (Useful), facilement <em>Utilisables</em> (Usable) et effectivement <em>Utilisés</em> (Used) par les systèmes d'IA.</li>
+            </ul>
           </aside>
         </section>
         
@@ -74,17 +74,15 @@
             </div>
           </div>
           <aside class="notes">
-            Notre parcours aujourd'hui s'articule autour de quatre grands axes:
-            
-            1. D'abord, nous poserons les bases des systèmes agents - qu'est-ce qu'un agent, comment interagit-il avec son environnement, et pourquoi l'autonomie est un concept clé
-            
-            2. Ensuite, nous plongerons dans le protocole MCP lui-même - son origine, ses composants, et comment il se compare aux standards existants comme les API REST
-            
-            3. La troisième partie sera consacrée à la conception d'outils pour l'IA - comment créer des services qui respectent les 3U (Utile, Utilisable, Utilisé)
-            
-            4. Enfin, nous examinerons des cas d'usage concrets, les défis actuels, et les évolutions futures du MCP
-            
-            L'image représente la diversité des environnements avec lesquels un agent IA peut interagir - nous verrons comment le MCP facilite ces interactions.
+            <h3>Structure de la présentation</h3>
+            <p>Notre parcours aujourd'hui s'articule autour de quatre grands axes:</p>
+            <ol>
+              <li><strong>Les systèmes agents</strong> - qu'est-ce qu'un agent, comment interagit-il avec son environnement, et pourquoi l'autonomie est un concept clé</li>
+              <li><strong>Le protocole MCP</strong> - son origine, ses composants, et comment il se compare aux standards existants comme les API REST</li>
+              <li><strong>La conception d'outils pour l'IA</strong> - comment créer des services qui respectent les 3U (Utile, Utilisable, Utilisé)</li>
+              <li><strong>Cas d'usage et futur</strong> - exemples concrets, défis actuels, et évolutions futures du MCP</li>
+            </ol>
+            <p>L'image représente la diversité des environnements avec lesquels un agent IA peut interagir - nous verrons comment le MCP facilite ces interactions.</p>
           </aside>
         </section>
         
@@ -95,25 +93,39 @@
 
         <section>
           <h2>Bases des Systèmes Agents</h2>
-          <ul>
-            <li>Un <strong>agent</strong> interagit avec un <strong>environnement</strong></li>
-            <li>L'<strong>environnement</strong> fournit des informations observables</li>
-            <li>L'<strong>autonomie</strong> est la capacité d'agir indépendamment</li>
-            <li>Un agent doit pouvoir <strong>modifier</strong> son environnement pour être utile</li>
-          </ul>
+          <div class="split-layout">
+            <div class="split-left">
+              <ul>
+                <li>Un <strong>agent</strong> interagit avec un <strong>environnement</strong></li>
+                <li>L'<strong>autonomie</strong> est la capacité d'agir indépendamment</li>
+                <li>Un agent doit pouvoir <strong>modifier</strong> son environnement</li>
+              </ul>
+            </div>
+            <div class="split-right">
+              <!-- PLACEHOLDER: Image montrant un agent IA au centre, connecté à différents environnements/systèmes (base de données, web, applications, etc.) avec des flèches bidirectionnelles -->
+              <p><em>[Image: Agent au centre interagissant avec multiples environnements]</em></p>
+            </div>
+          </div>
           <aside class="notes">
-            Détails sur les agents et l'environnement:
-            - Un agent est une entité capable d'interagir avec un environnement
-            - L'environnement fournit des informations qui le rendent observable par l'agent
-            - L'environnement offre des capacités permettant à l'agent d'interagir avec lui et de le modifier
-            - Un agent qui ne peut pas modifier son environnement est inutile
+            <h3>Concepts fondamentaux des agents</h3>
+            <h4>Agents et environnement:</h4>
+            <ul>
+              <li>Un agent est une entité capable d'<strong>interagir avec un environnement</strong></li>
+              <li>L'environnement fournit des informations qui le rendent <strong>observable</strong> par l'agent</li>
+              <li>L'environnement offre des capacités permettant à l'agent d'<strong>interagir</strong> avec lui et de le <strong>modifier</strong></li>
+              <li>Un agent qui ne peut pas modifier son environnement est inutile</li>
+            </ul>
             
-            Détails sur l'autonomie:
-            - L'autonomie est une propriété variable d'un agent
-            - C'est la capacité d'agir de manière indépendante
-            - Il existe plusieurs niveaux d'autonomie
-            - Plus un agent est autonome, moins il a besoin d'interaction humaine
-            - Ne pas confondre agents et workflows : un workflow est un processus d'exécution préprogrammé, un graphe d'exécution
+            <h4>Autonomie:</h4>
+            <ul>
+              <li>L'autonomie est une <strong>propriété variable</strong> d'un agent</li>
+              <li>C'est la capacité d'agir de manière indépendante</li>
+              <li>Il existe plusieurs <strong>niveaux d'autonomie</strong></li>
+              <li>Plus un agent est autonome, moins il a besoin d'interaction humaine</li>
+              <li>Ne pas confondre agents et workflows : un workflow est un processus d'exécution préprogrammé, un graphe d'exécution</li>
+            </ul>
+            
+            <p><em>Pour l'image:</em> chercher une illustration qui montre clairement un agent (représenté par une IA) au centre, avec des connexions bidirectionnelles vers différents environnements et systèmes.</p>
           </aside>
         </section>
 
@@ -178,6 +190,21 @@
         </section>
 
         <section>
+          <!-- PLACEHOLDER: Image montrant un diagramme d'architecture MCP avec Hôte (LLM), Client MCP, et différents Serveurs MCP connectés -->
+                
+          <p><img src="mcp/architecture.png" alt="Architecture MCP montrant Hôte, Client MCP et Serveurs MCP" height="250"></p>
+          <aside class="notes">
+            Cette image devrait représenter l'architecture MCP avec:
+            - L'hôte (host) qui exécute le modèle de langage
+            - Le client MCP intégré dans l'hôte
+            - Plusieurs serveurs MCP proposant différents outils
+            - Les flux de communication entre ces composants
+            
+            Cette visualisation aidera à comprendre comment les différents éléments s'articulent dans l'écosystème MCP.
+          </aside>
+        </section>
+
+        <section>
           <h2>Le Model Context Protocol (MCP)</h2>
           <ul>
             <li>Protocole apparu fin 2023, initié par <em>Anthropic</em></li>
@@ -223,26 +250,8 @@
         </section>
 
         <section>
-          <h2>Capacités et Affordance pour l'IA</h2>
-          <div class="split-layout">
-            <div class="split-left">
-              <h3>Trois capacités exposées :</h3>
-              <ul>
-                <li><strong>Ressources</strong> : données de l'environnement</li>
-                <li><strong>Actions</strong> : fonctions pour agir</li>
-                <li><strong>Prompts</strong> : guides de raisonnement</li>
-              </ul>
-            </div>
-            <div class="split-right">
-              <h3>Affordance pour l'IA :</h3>
-              <ul>
-                <li>Descriptions textuelles</li>
-                <li>Noms de fonctions appropriés</li>
-                <li>Documentation claire</li>
-                <li>Prompts guidant l'utilisation</li>
-              </ul>
-            </div>
-          </div>
+          <!-- PLACEHOLDER: Image illustrant les 3 capacités MCP (Resources, Actions, Prompts) et leur relation avec l'environnement -->
+          <p><em>[Image: Tryptique des capacités MCP - Resources (GET), Actions (POST), Prompts (guides)]</em></p>
           <aside class="notes">
             Capacités exposées par un serveur MCP :
             - Ressources : Exposer des données issues d'un environnement
@@ -310,19 +319,18 @@
         </section>
 
         <section>
+          <!-- PLACEHOLDER: Image comparant le flux API REST (Humain → API → Service) et le flux MCP (IA → MCP → Service) -->
+          <p><em>[Image: Parallèle entre API REST pour humains et MCP pour IA]</em></p>
           <h2>MCP : Les "API REST" pour les IA</h2>
           <div class="split-layout">
             <div class="split-left">
-              <h3>Analogie :</h3>
               <ul>
                 <li>API REST → <em>humains</em></li>
                 <li>MCP → <em>agents IA</em></li>
                 <li>Même <strong>rôle catalyseur</strong></li>
-                <li>Affordance adaptée aux IA</li>
               </ul>
             </div>
             <div class="split-right">
-              <h3>Correspondances :</h3>
               <ul>
                 <li><strong>Action</strong> ≈ <code>POST</code></li>
                 <li><strong>Resource</strong> ≈ <code>GET</code></li>
@@ -340,6 +348,8 @@
             - Action : Équivalent POST REST. Permet à l'agent de modifier l'état du monde extérieur ou d'effectuer une tâche
             - Resource : Équivalent GET REST. Permet à l'agent de récupérer de l'information (ex: recherche web, état d'un système)
             - Prompt : (Souvent sous-estimé mais crucial !) L'outil MCP peut enrichir le prompt de l'IA pour l'aider à décider si, quand et comment utiliser l'outil. C'est la clé de l'affordance pour l'IA
+            
+            L'image devrait illustrer clairement le parallèle entre les deux approches, en montrant comment chaque protocole sert d'interface entre les utilisateurs (humains ou IA) et les services.
           </aside>
         </section>
 
@@ -393,14 +403,14 @@
             <div class="split-right">
               <h3>Utilisateurs actuels :</h3>
               <ul>
-                <li>Outils dev : <em>Cursor, Cloud Code...</em></li>
+                <li>Outils dev : <em>Cursor, Claude Code...</em></li>
                 <li>Systèmes internes : <em>KB, CI/CD, BDD</em></li>
                 <li>Éditeurs : <em>Salesforce, ServiceNow...</em></li>
               </ul>
             </div>
           </div>
           <aside class="notes">
-            Importance et adoption du MCP :
+            Importance et adoption du <b>MCP</b> :
             - Standard de Fait : Accepté largement (Anthropic, OpenAI, Google...), devenant le standard d'exposition d'outils pour IA
             - Écosystème : Permet de construire un écosystème d'outils interopérables, pilotés par l'IA (similaire à l'écosystème API)
             - Catalyseur : Accélère la révolution numérique de l'IA et des agents
@@ -545,24 +555,14 @@
         </section>
 
         <section>
+          <!-- PLACEHOLDER: Image montrant les trois vagues de révolution numérique (Internet, Smartphone, Agents IA) -->
+          <p><em>[Image: Les trois vagues de révolution numérique avec MCP comme catalyseur de la troisième]</em></p>
           <h2>MCP : Catalyseur d'une Nouvelle Révolution</h2>
-          <div class="split-layout">
-            <div class="split-left">
-              <h3>Révolutions précédentes :</h3>
-              <ul>
-                <li><strong>Internet</strong> : services omnicanaux</li>
-                <li><strong>Smartphone</strong> : mobilité numérique</li>
-              </ul>
-            </div>
-            <div class="split-right">
-              <h3>Révolution actuelle :</h3>
-              <ul>
-                <li><strong>Délégation cognitive</strong> aux agents IA</li>
-                <li>MCP comme <strong>catalyseur</strong></li>
-                <li>Équivalent au rôle des <strong>API REST</strong></li>
-              </ul>
-            </div>
-          </div>
+          <ol>
+            <li><strong>Internet</strong> : services accessibles depuis le canapé</li>
+            <li><strong>Smartphone</strong> : services numériques nomades</li>
+            <li><strong>Agents IA</strong> : délégation des tâches cognitives</li>
+          </ol>
           <aside class="notes">
             MCP : Le catalyseur de la prochaine révolution numérique :
             - 1ère révolution : Internet (omnicanal, services accessibles depuis le canapé)
@@ -570,6 +570,8 @@
             - Prochaine révolution : Délégation des tâches cognitives à des assistants IA
             
             MCP joue le même rôle catalyseur pour l'ère des agents IA que les API REST pour le web.
+            
+            L'image devrait illustrer cette progression historique des trois grandes vagues technologiques, en mettant l'accent sur le rôle catalyseur du MCP dans cette troisième vague.
           </aside>
         </section>
 
@@ -623,19 +625,30 @@
           </blockquote>
           <p><em>L'affordance pour l'IA est la clé - un outil mal documenté ou sans prompts clairs sera ignoré.</em></p>
           <aside class="notes">
-            Troisième point fondamental:
+            <h3>Le cadre des 3 U</h3>
+            <p>Les 3 U constituent un cadre simple mais puissant pour évaluer vos outils MCP:</p>
             
-            Les 3 U constituent un cadre simple mais puissant pour évaluer vos outils MCP:
+            <h4>Useful (Utile):</h4>
+            <ul>
+              <li>L'outil doit résoudre un problème réel et apporter une valeur ajoutée</li>
+              <li>Un outil qui ne répond à aucun besoin concret ne sera jamais utilisé</li>
+            </ul>
             
-            - Useful (Utile): L'outil doit résoudre un problème réel et apporter une valeur ajoutée. Un outil qui ne répond à aucun besoin concret ne sera jamais utilisé.
+            <h4>Usable (Utilisable):</h4>
+            <ul>
+              <li>L'outil doit être techniquement accessible via le protocole MCP standard</li>
+              <li>Interfaces bien définies et comportements prévisibles</li>
+            </ul>
             
-            - Usable (Utilisable): L'outil doit être techniquement accessible via le protocole MCP standard, avec des interfaces bien définies et des comportements prévisibles.
+            <h4>Used (Utilisé):</h4>
+            <ul>
+              <li>L'aspect le plus souvent négligé</li>
+              <li>L'outil doit être conçu de façon à ce que l'IA le choisisse effectivement parmi les options disponibles</li>
+            </ul>
             
-            - Used (Utilisé): L'aspect le plus souvent négligé - l'outil doit être conçu de façon à ce que l'IA le choisisse effectivement parmi les options disponibles.
+            <p>Ce dernier point est directement lié à l'affordance: un outil mal documenté, avec des prompts peu clairs ou incomplets, risque d'être tout simplement ignoré par l'IA, même s'il est potentiellement utile et techniquement utilisable.</p>
             
-            Ce dernier point est directement lié à l'affordance: un outil mal documenté, avec des prompts peu clairs ou incomplets, risque d'être tout simplement ignoré par l'IA, même s'il est potentiellement utile et techniquement utilisable.
-            
-            Commencez avec des cas d'usage simples dans le domaine IT, puis étendez progressivement à d'autres cas métier une fois l'expertise acquise.
+            <p><strong>Conseil pratique:</strong> Commencez avec des cas d'usage simples dans le domaine IT, puis étendez progressivement à d'autres cas métier une fois l'expertise acquise.</p>
           </aside>
         </section>
         
