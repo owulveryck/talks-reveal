@@ -319,15 +319,20 @@ LLM: "Je ne connais pas votre nom,
           <div class="mermaid" style="margin-top: 20px;">
 sequenceDiagram
     participant User
+    participant Inference Engine
     participant LLM
     participant MCP Client
     participant MCP Server
-    User->>LLM: Requête (ex: Météo Paris?)
-    LLM->>MCP Client: Génère appel fonction (get_weather, location: Paris)
+    User->>Inference Engine: Requête (ex: Météo Paris?)
+    Inference Engine->>LLM: Transmet la requête
+    LLM-->>Inference Engine: Génère texte avec appel fonction (get_weather, location: Paris)
+    Inference Engine->>MCP Client: Extrait et exécute l'appel fonction
     MCP Client->>MCP Server: Exécute l'appel get_weather(Paris)
     MCP Server-->>MCP Client: Résultat (ex: 25°C, ensoleillé)
-    MCP Client-->>LLM: Fournit le résultat de la fonction
-    LLM->>User: Réponse intégrant le résultat (ex: Il fait 25°C à Paris.)
+    MCP Client-->>Inference Engine: Fournit le résultat de la fonction
+    Inference Engine->>LLM: Transmet le résultat pour formulation finale
+    LLM-->>Inference Engine: Génère réponse avec le résultat intégré
+    Inference Engine->>User: Réponse finale (ex: Il fait 25°C à Paris.)
           </div>
           
           <aside class="notes">
