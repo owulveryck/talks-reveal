@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Training: Generative AI and Business Implications</title>
+
+	<meta name="description" content="Training for PhD Students on Generative AI and its Business Implications">
+	<meta name="author" content="Olivier Wulveryck">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/octo.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	
+	<!-- Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<style>
+		.part-header {
+			background-color: #2D6B9F;
+			color: white;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		
+		.summary-list {
+			font-size: 0.8em;
+		}
+		
+		.summary-list li {
+			margin-bottom: 10px;
+		}
+		
+		.summary-quote {
+			font-size: 0.75em;
+			font-style: italic;
+		}
+		
+		.concept-icon {
+			color: #E67E22;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<img class="header-tete" src="coorp/images/tete.png"/>
+	<div class="footer-text">OCTO Part of Accenture © 2023 - All rights reserved</div>
+	<div class="better-way">There is a better way</div>
+
+	<div class="reveal">
+
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<!-- TITLE SLIDE -->
+			<section>
+				<h1>Generative AI and Business Implications</h1>
+				<h3>Training for PhD Students</h3>
+				<p>
+					<small>Olivier Wulveryck</small>
+				</p>
+				<i class="fa-solid fa-robot fa-3x" style="color: #E67E22; margin-top: 20px;"></i>
+			</section>
+
+			<!-- INTRODUCTION -->
+			<section>
+				<h2>Introduction</h2>
+				<ul>
+					<li>Welcome and introductions</li>
+					<li>Today's objective: Develop critical thinking about GenAI</li>
+					<li>Conceptual distinction: Science vs. Engineering in AI</li>
+				</ul>
+				<aside class="notes">
+					- Have students introduce themselves briefly
+					- Emphasize this is about understanding both the potential and limitations
+					- Science: answering questions / Engineering: solving problems
+				</aside>
+			</section>
+
+			<!-- AGENDA -->
+			<section>
+				<h2>Agenda</h2>
+				<ol>
+					<li><i class="fa-solid fa-layer-group"></i> Foundations of Generative AI (1h45)</li>
+					<li><i class="fa-solid fa-comments"></i> From Models to Assistants: Capabilities & First Hurdles (2h00)</li>
+					<li><i class="fa-solid fa-robot"></i> Towards Agentic Systems: Autonomy & Increased Complexity (1h30)</li>
+					<li><i class="fa-solid fa-building"></i> Current Landscape, Enterprise Reality & Synthesis (1h00)</li>
+				</ol>
+			</section>
+
+			<!-- PART 1: FOUNDATIONS OF GENERATIVE AI -->
+			<section>
+				<section>
+					<h2 class="part-header">Part 1: Foundations of Generative AI</h2>
+					<h3>Agenda</h3>
+					<ul>
+						<li><i class="fa-solid fa-timeline concept-icon"></i> The AI Landscape & Evolution</li>
+						<li><i class="fa-solid fa-brain concept-icon"></i> At the Core of Models</li>
+						<li><i class="fa-solid fa-database concept-icon"></i> Data: The Fuel and the Challenge</li>
+						<li><i class="fa-solid fa-code-branch concept-icon"></i> Open Source vs. Open Weight vs. Closed Models</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-timeline concept-icon"></i> The AI Landscape</h2>
+					<p>AI has evolved from statistical methods to machine learning, deep learning, and now generative AI, with each phase building on previous advances while addressing their limitations.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-arrow-right-arrow-left concept-icon"></i> From RNNs to Transformers</h2>
+					<p>Recurrent Neural Networks struggled with long-range dependencies, while Transformers use attention mechanisms to process sequences in parallel, enabling much better understanding of context.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-brain concept-icon"></i> Neural Networks Resurgence</h2>
+					<p>Modern AI success stems from neural networks' ability to find patterns in vast datasets, enabled by exponential growth in GPU computing power.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-puzzle-piece concept-icon"></i> Tokenization</h2>
+					<p>Converting text into tokens (words, subwords, or characters) that models can process, balancing vocabulary size with semantic meaning preservation.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-sitemap concept-icon"></i> Transformer Architecture</h2>
+					<p>The breakthrough architecture using self-attention to weigh the importance of different parts of input data, enabling parallel processing and capturing long-range dependencies.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-file-zipper concept-icon"></i> Data as Compression</h2>
+					<p>LLMs can be viewed as compression algorithms for internet-scale data, leading to emergent capabilities but also inheriting biases present in that data.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-scale-unbalanced concept-icon"></i> Data Bias Challenge</h2>
+					<p>Models trained on biased datasets reproduce and sometimes amplify these biases, requiring careful dataset curation and debiasing techniques.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-shield-halved concept-icon"></i> Data Privacy Constraints</h2>
+					<p>Using sensitive data for training creates regulatory challenges (GDPR), limits deployment options, and introduces potential security vulnerabilities.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-code-branch concept-icon"></i> Model Openness Spectrum</h2>
+					<p>From fully open source (code + weights + training data) to closed commercial systems, with significant implications for adaptability, control, and vendor dependence.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-lock concept-icon"></i> Vendor Lock-in Risk</h2>
+					<p>Dependence on proprietary AI models can create long-term business constraints through API dependencies, data transfer limitations, and evolving pricing models.</p>
+				</section>
+
+				<section>
+					<h3 class="part-header">Part 1: What We've Learned</h3>
+					<ul class="summary-list">
+						<li>Generative AI represents a fundamental shift in AI capabilities through transformer architecture</li>
+						<li>Models rely on massive datasets and computational resources</li>
+						<li>Key technical concepts: tokenization, attention mechanisms, generation process</li>
+						<li>Inherent constraints: data bias, privacy concerns, computational costs</li>
+						<li>Model access models (open/closed) create different business limitations</li>
+					</ul>
+					<blockquote class="summary-quote">
+						Generative AI represents a significant evolution in AI technology, but comes with inherent constraints around data bias, privacy, computational costs, and potential vendor lock-in that must be considered in any business application.
+					</blockquote>
+				</section>
+			</section>
+
+			<!-- PART 2: FROM MODELS TO ASSISTANTS -->
+			<section>
+				<section>
+					<h2 class="part-header">Part 2: From Models to Assistants</h2>
+					<h3>Agenda</h3>
+					<ul>
+						<li><i class="fa-solid fa-comments concept-icon"></i> Emergence of AI Assistants</li>
+						<li><i class="fa-solid fa-gears concept-icon"></i> Key Technical Concepts</li>
+						<li><i class="fa-solid fa-triangle-exclamation concept-icon"></i> Initial Challenges & Business Realities</li>
+						<li><i class="fa-solid fa-plug concept-icon"></i> Extending Capabilities: RAG & Function Calling</li>
+						<li><i class="fa-solid fa-diagram-project concept-icon"></i> Architectural Limitations</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-comments concept-icon"></i> AI Assistants Anatomy</h2>
+					<p>Assistants combine a language model core with an inference engine and user interface, creating the interactive experiences we know as ChatGPT, Claude, etc.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-microchip concept-icon"></i> Inference Engine</h2>
+					<p>The software component that manages model operation, including parameter handling, request processing, and response generation, significantly impacting cost and performance.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-memory concept-icon"></i> Context Window</h2>
+					<p>The limited "memory" of an LLM (measured in tokens) that determines how much previous conversation and content it can consider when generating responses.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-pen concept-icon"></i> Prompt Engineering</h2>
+					<p>The practice of crafting inputs to LLMs that elicit desired outputs, becoming a crucial skill for effective AI utilization in business contexts.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-ghost concept-icon"></i> Statelessness Challenge</h2>
+					<p>LLMs don't maintain internal memory between interactions beyond their context window, creating limitations for long-running applications and workflows.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-money-bill-trend-up concept-icon"></i> The Cost Reality</h2>
+					<p>Inference (using models) requires significant computational resources, creating economic constraints for large-scale deployments, especially for consumer applications.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-person-drowning concept-icon"></i> Hallucinations</h2>
+					<p>The tendency of LLMs to generate plausible but factually incorrect information, creating significant reliability challenges for business applications.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-magnifying-glass-chart concept-icon"></i> Retrieval-Augmented Generation</h2>
+					<p>RAG connects LLMs to external knowledge sources, supplementing the model's internal knowledge with accurate, up-to-date, and domain-specific information.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-shield-virus concept-icon"></i> Security in RAG Systems</h2>
+					<p>Connecting LLMs to sensitive databases creates potential exposure pathways, requiring careful access control, query filtering, and response sanitization.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-code concept-icon"></i> Function Calling</h2>
+					<p>Enabling LLMs to invoke external tools and APIs, extending capabilities beyond text generation to performing actions in other systems.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-virus concept-icon"></i> Prompt Injection Risk</h2>
+					<p>Security vulnerability where malicious inputs manipulate an LLM to bypass safeguards or perform unintended actions, particularly concerning with function calling.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-cubes concept-icon"></i> The Monolith Problem</h2>
+					<p>Early assistant architectures created tightly coupled systems that are difficult to maintain, evolve, and secure as capabilities grow more complex.</p>
+				</section>
+
+				<section>
+					<h3 class="part-header">Part 2: What We've Learned</h3>
+					<ul class="summary-list">
+						<li>AI assistants combine LLMs with inference engines and interfaces</li>
+						<li>Key concepts: context window, prompt engineering, statelessness</li>
+						<li>Core business challenges: high costs, hallucinations, integration complexity</li>
+						<li>Extended capabilities through RAG and function calling</li>
+						<li>Each extension introduces new security and integration challenges</li>
+						<li>Monolithic architectures limit flexibility as systems grow</li>
+					</ul>
+					<blockquote class="summary-quote">
+						While AI assistants bring powerful capabilities through interfaces like ChatGPT, businesses must navigate significant challenges including high costs, reliability issues with hallucinations, security vulnerabilities, and integration complexities before achieving meaningful value.
+					</blockquote>
+				</section>
+			</section>
+
+			<!-- PART 3: TOWARDS AGENTIC SYSTEMS -->
+			<section>
+				<section>
+					<h2 class="part-header">Part 3: Towards Agentic Systems</h2>
+					<h3>Agenda</h3>
+					<ul>
+						<li><i class="fa-solid fa-robot concept-icon"></i> Introduction to Agentic Systems</li>
+						<li><i class="fa-solid fa-toolbox concept-icon"></i> Equipping Agents with Tools</li>
+						<li><i class="fa-solid fa-people-group concept-icon"></i> Organizational & Architectural Shifts</li>
+						<li><i class="fa-solid fa-shield-halved concept-icon"></i> The Price of Autonomy</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-robot concept-icon"></i> Agentic Systems Defined</h2>
+					<p>AI systems that can plan and execute multi-step tasks with some degree of autonomy, making decisions about which actions to take based on goals and context.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-lightbulb concept-icon"></i> AGI vs. Specialized Agents</h2>
+					<p>While Artificial General Intelligence remains a distant goal, specialized agents focused on specific domains represent practical, achievable applications of agentic principles.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-toolbox concept-icon"></i> Tool Ecosystem</h2>
+					<p>Agents require access to diverse tools (APIs, functions, data sources) to interact with the world and accomplish tasks that extend beyond text generation.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-puzzle-piece concept-icon"></i> Tool Integration Challenges</h2>
+					<p>Each tool introduces new interfaces, authentication methods, error handling, and security considerations, creating significant integration complexity.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-people-group concept-icon"></i> Conway's Law in AI</h2>
+					<p>"Organizations design systems that mirror their communication structure." Team organization strongly influences AI architecture, especially for complex systems like agents.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-box-open concept-icon"></i> Tool as a Product</h2>
+					<p>Treating each capability as a managed product with clear interfaces, documentation, and governance, enabling systematic evolution of agent capabilities.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-shield-virus concept-icon"></i> The Security Challenge</h2>
+					<p>Autonomous actions significantly amplify security risks, as agents can potentially chain together actions in ways that bypass individual safeguards.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-sliders concept-icon"></i> Control Mechanisms</h2>
+					<p>Robust agent governance requires comprehensive monitoring, approval workflows, action limitations, and human oversight to ensure safe operation.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-gear concept-icon"></i> Building Reliable Agents</h2>
+					<p>Creating agents that operate reliably involves complex testing, error handling, and recovery mechanisms that substantially increase development and maintenance costs.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-clock concept-icon"></i> Current Limitations</h2>
+					<p>Long-running tasks, graceful error handling, and efficient notification systems remain challenging aspects of agentic systems, limiting their application domains.</p>
+				</section>
+
+				<section>
+					<h3 class="part-header">Part 3: What We've Learned</h3>
+					<ul class="summary-list">
+						<li>Agentic systems can plan and execute multi-step tasks with autonomy</li>
+						<li>Tool ecosystems enable interaction beyond text generation</li>
+						<li>Team organization shapes agent architecture (Conway's Law)</li>
+						<li>Significant challenges in security, control, complexity, and reliability</li>
+						<li>Current implementations have important limitations in handling long tasks</li>
+						<li>Balance between autonomy and oversight remains crucial</li>
+					</ul>
+					<blockquote class="summary-quote">
+						Agentic systems represent the frontier of GenAI with promising autonomy, but come with substantial challenges in security, control, complexity, and reliability that organizations must carefully address before implementation.
+					</blockquote>
+				</section>
+			</section>
+
+			<!-- PART 4: CURRENT LANDSCAPE -->
+			<section>
+				<section>
+					<h2 class="part-header">Part 4: Current Landscape & Enterprise Reality</h2>
+					<h3>Agenda</h3>
+					<ul>
+						<li><i class="fa-solid fa-chart-line concept-icon"></i> Technical & Market Summary</li>
+						<li><i class="fa-solid fa-building concept-icon"></i> Enterprise Challenges Overview</li>
+						<li><i class="fa-solid fa-gears concept-icon"></i> Implementation Realities</li>
+						<li><i class="fa-solid fa-chart-simple concept-icon"></i> Measuring Success in GenAI Initiatives</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-clock-rotate-left concept-icon"></i> Evolution Timeline</h2>
+					<p>The progression from base models to assistants to agents represents both increasing capability and complexity, with each stage building on and addressing limitations of previous approaches.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-server concept-icon"></i> Inference Provider Landscape</h2>
+					<p>A diverse ecosystem of model providers, inference engines, and platforms has emerged, each with different strengths, limitations, and business models.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-lock concept-icon"></i> The Lock-in Dynamic</h2>
+					<p>API designs, data formats, and proprietary features create dependencies that can limit flexibility and increase switching costs as investments in a platform grow.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-gem concept-icon"></i> Value Creation Focus</h2>
+					<p>Success in GenAI comes not from using the most advanced models, but from focusing on specific value creation through thoughtful integration with business processes.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-money-bill-trend-up concept-icon"></i> Cost vs. ROI Challenge</h2>
+					<p>High costs for development, inference, and specialized talent create difficult ROI calculations, especially for early-stage or experimental applications.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-database concept-icon"></i> Data Governance Reality</h2>
+					<p>Effective GenAI implementation requires comprehensive data management practices addressing privacy, security, and compliance with evolving regulations.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-check-double concept-icon"></i> The Reliability Imperative</h2>
+					<p>Business applications demand higher accuracy than consumer applications, requiring investments in fact-checking, verification systems, and explainability mechanisms.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-shield-halved concept-icon"></i> Security Framework</h2>
+					<p>Comprehensive security for GenAI must address prompt injection, data leakage, unauthorized actions, and other novel attack vectors specific to language models.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-network-wired concept-icon"></i> Integration Complexity</h2>
+					<p>Connecting GenAI to existing systems requires addressing technical debt, legacy APIs, data quality issues, and existing workflow integration.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-users concept-icon"></i> The Talent Gap</h2>
+					<p>Organizations face significant challenges in finding, developing, and retaining talent with the specialized skills needed for effective GenAI implementation.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-scale-balanced concept-icon"></i> Regulatory Navigation</h2>
+					<p>Evolving AI regulations (like the EU AI Act) create compliance challenges that require proactive governance approaches and continuous adaptation.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-handshake concept-icon"></i> Responsible AI Practices</h2>
+					<p>Addressing bias, ensuring fairness, providing transparency, and managing workforce impacts are essential aspects of sustainable GenAI adoption.</p>
+				</section>
+
+				<section>
+					<h2><i class="fa-solid fa-chart-simple concept-icon"></i> Measuring Success</h2>
+					<p>Effective evaluation of GenAI initiatives requires balanced KPIs addressing both technical performance and business impact, supported by appropriate oversight mechanisms.</p>
+				</section>
+
+				<section>
+					<h3 class="part-header">Part 4: What We've Learned</h3>
+					<ul class="summary-list">
+						<li>GenAI has evolved from models to assistants to agents with increasing capabilities</li>
+						<li>Success requires navigating significant business constraints</li>
+						<li>Key challenges: cost justification, reliability, security, integration, talent, regulation</li>
+						<li>Effective implementation focuses on specific value rather than model sophistication</li>
+						<li>Comprehensive governance frameworks are essential</li>
+						<li>Measurement must balance technical and business metrics</li>
+					</ul>
+					<blockquote class="summary-quote">
+						Successful GenAI implementation requires balancing technical capabilities with real-world business constraints, focusing on specific value creation rather than using the most advanced models, and establishing robust governance frameworks for ethical, secure deployment.
+					</blockquote>
+				</section>
+			</section>
+
+			<!-- FINAL Q&A SLIDE -->
+			<section>
+				<h2>Final Q&A & Discussion</h2>
+				<p>Let's discuss your questions about Generative AI in business contexts</p>
+				<div class="r-hstack justify-center">
+					<div>
+						<img src="photos/linkedin.jpg" height="150">
+						<p>Connect on LinkedIn</p>
+					</div>
+					<div style="margin-left: 40px;">
+						<i class="fa-solid fa-robot fa-6x" style="color: #E67E22;"></i>
+						<p>Thank you!</p>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/zoom/zoom.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/search/search.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+		});
+
+	</script>
+
+</body>
+</html>
